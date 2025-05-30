@@ -1,7 +1,7 @@
 import { TradingPageProps } from "@orderly.network/trading";
 import { FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
-import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/orderly";
+import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/nimco";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -51,19 +51,30 @@ const config: OrderlyConfig = {
       },
     },
     footerProps: {
-      telegramUrl: "https://orderly.network",
-      discordUrl: "https://discord.com/invite/orderlynetwork",
-      twitterUrl: "https://twitter.com/OrderlyNetwork",
-      trailing: <span className="oui-text-2xs oui-text-base-contrast-54">Charts powered by <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a></span>
+      // telegramUrl: "https://orderly.network",
+      discordUrl: "https://discord.gg/MA98WqRjbd",
+      twitterUrl: "https://x.com/winmore_xyz",
+      trailing: (
+        <span className="oui-text-2xs oui-text-base-contrast-54">
+          Charts powered by{" "}
+          <a
+            href="https://tradingview.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TradingView
+          </a>
+        </span>
+      ),
     },
   },
   orderlyAppProvider: {
     appIcons: {
       main: {
-        img: "/orderly-logo.svg",
+        img: "/logo.svg",
       },
       secondary: {
-        img: "/orderly-logo-secondary.svg",
+        img: "/logo-secondary.svg",
       },
     },
   },

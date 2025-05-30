@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import OrderlyProvider from "@/components/orderlyProvider";
+import NimcoProvider from "@/components/nimcoProvider";
 import "./styles/index.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <OrderlyProvider>{children}</OrderlyProvider>
+        <NimcoProvider>{children}</NimcoProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
