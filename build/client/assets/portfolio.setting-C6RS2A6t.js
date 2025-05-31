@@ -1,1 +1,0 @@
-import{j as t}from"./index-_b-vxSi4.js";import{$ as r}from"./index-BaX2kz2g.js";import{g as e}from"./utils-OKWQP5Dn.js";import"./index-hxeryC1o.js";import"./index-D1SqNoN2.js";import"./index-BcrQDpUm.js";import"./Trans-DyzQVnhk.js";import"./index-3_wm22oA.js";const f=()=>[{title:e("Settings")}];function u(){return t.jsx(r.SettingPage,{})}export{u as default,f as meta};
