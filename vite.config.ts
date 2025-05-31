@@ -34,5 +34,8 @@ export default defineConfig(() => {
         include: ["buffer", "crypto"],
       }),
     ],
+    server: {
+      allowedHosts: ["ninco.finance", "www.ninco.finance"],
+    },
   };
 });
