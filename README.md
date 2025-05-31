@@ -100,6 +100,6 @@ For custom domain setup:
 ## Live
 
 ```
-pm2 start serve --name nincofi -- -s build -l 5173
+pm2 start "npx remix-serve ./build/server/index.js"
 
 ```
