@@ -1889,17 +1889,10 @@
   resolved "https://registry.npmjs.org/@ledgerhq/logs/-/logs-6.12.0.tgz"
   integrity sha512-ExDoj1QV5eC6TEbMdLUMMk9cfvNKhhv5gXol4SmULRVCx/3iyCPhJ74nsb3S0Vb+/f+XujBEj3vQn5+cwS0fNA==
 
-"@lit-labs/ssr-dom-shim@^1.0.0", "@lit-labs/ssr-dom-shim@^1.1.0", "@lit-labs/ssr-dom-shim@^1.2.0":
+"@lit-labs/ssr-dom-shim@^1.2.0":
   version "1.3.0"
   resolved "https://registry.npmjs.org/@lit-labs/ssr-dom-shim/-/ssr-dom-shim-1.3.0.tgz"
   integrity sha512-nQIWonJ6eFAvUUrSlwyHDm/aE8PBDu5kRpL0vHMg6K8fK3Diq1xdPjTnsJSwxABhaZ+5eBi1btQB5ShUTKo4nQ==
-
-"@lit/reactive-element@^1.3.0", "@lit/reactive-element@^1.6.0":
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/@lit/reactive-element/-/reactive-element-1.6.3.tgz"
-  integrity sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==
-  dependencies:
-    "@lit-labs/ssr-dom-shim" "^1.0.0"
 
 "@lit/reactive-element@^2.0.0", "@lit/reactive-element@^2.1.0":
   version "2.1.0"
@@ -1997,75 +1990,6 @@
   version "3.13.1"
   resolved "https://registry.npmjs.org/@mobily/ts-belt/-/ts-belt-3.13.1.tgz"
   integrity sha512-K5KqIhPI/EoCTbA6CGbrenM9s41OouyK8A03fGJJcla/zKucsgLbz8HNbeseoLarRPgyWJsUyCYqFhI7t3Ra9Q==
-
-"@motionone/animation@^10.15.1", "@motionone/animation@^10.18.0":
-  version "10.18.0"
-  resolved "https://registry.npmjs.org/@motionone/animation/-/animation-10.18.0.tgz"
-  integrity sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==
-  dependencies:
-    "@motionone/easing" "^10.18.0"
-    "@motionone/types" "^10.17.1"
-    "@motionone/utils" "^10.18.0"
-    tslib "^2.3.1"
-
-"@motionone/dom@^10.16.2", "@motionone/dom@^10.16.4":
-  version "10.18.0"
-  resolved "https://registry.npmjs.org/@motionone/dom/-/dom-10.18.0.tgz"
-  integrity sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==
-  dependencies:
-    "@motionone/animation" "^10.18.0"
-    "@motionone/generators" "^10.18.0"
-    "@motionone/types" "^10.17.1"
-    "@motionone/utils" "^10.18.0"
-    hey-listen "^1.0.8"
-    tslib "^2.3.1"
-
-"@motionone/easing@^10.18.0":
-  version "10.18.0"
-  resolved "https://registry.npmjs.org/@motionone/easing/-/easing-10.18.0.tgz"
-  integrity sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==
-  dependencies:
-    "@motionone/utils" "^10.18.0"
-    tslib "^2.3.1"
-
-"@motionone/generators@^10.18.0":
-  version "10.18.0"
-  resolved "https://registry.npmjs.org/@motionone/generators/-/generators-10.18.0.tgz"
-  integrity sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==
-  dependencies:
-    "@motionone/types" "^10.17.1"
-    "@motionone/utils" "^10.18.0"
-    tslib "^2.3.1"
-
-"@motionone/svelte@^10.16.2":
-  version "10.16.4"
-  resolved "https://registry.npmjs.org/@motionone/svelte/-/svelte-10.16.4.tgz"
-  integrity sha512-zRVqk20lD1xqe+yEDZhMYgftsuHc25+9JSo+r0a0OWUJFocjSV9D/+UGhX4xgJsuwB9acPzXLr20w40VnY2PQA==
-  dependencies:
-    "@motionone/dom" "^10.16.4"
-    tslib "^2.3.1"
-
-"@motionone/types@^10.15.1", "@motionone/types@^10.17.1":
-  version "10.17.1"
-  resolved "https://registry.npmjs.org/@motionone/types/-/types-10.17.1.tgz"
-  integrity sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==
-
-"@motionone/utils@^10.15.1", "@motionone/utils@^10.18.0":
-  version "10.18.0"
-  resolved "https://registry.npmjs.org/@motionone/utils/-/utils-10.18.0.tgz"
-  integrity sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==
-  dependencies:
-    "@motionone/types" "^10.17.1"
-    hey-listen "^1.0.8"
-    tslib "^2.3.1"
-
-"@motionone/vue@^10.16.2":
-  version "10.16.4"
-  resolved "https://registry.npmjs.org/@motionone/vue/-/vue-10.16.4.tgz"
-  integrity sha512-z10PF9JV6SbjFq+/rYabM+8CVlMokgl8RFGvieSGNTmrkQanfHn+15XBrhG3BgUfvmTeSeyShfOHpG0i9zEdcg==
-  dependencies:
-    "@motionone/dom" "^10.16.4"
-    tslib "^2.3.1"
 
 "@ngraveio/bc-ur@^1.0.0", "@ngraveio/bc-ur@^1.1.5":
   version "1.1.13"
@@ -3470,6 +3394,15 @@
     dayjs "1.11.13"
     viem ">=2.23.11"
 
+"@reown/appkit-common@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-common/-/appkit-common-1.7.3.tgz"
+  integrity sha512-wKTr6N3z8ly17cc51xBEVkZK4zAd8J1m7RubgsdQ1olFY9YJGe61RYoNv9yFjt6tUVeYT+z7iMUwPhX2PziefQ==
+  dependencies:
+    big.js "6.2.2"
+    dayjs "1.11.13"
+    viem ">=2.23.11"
+
 "@reown/appkit-controllers@1.7.2":
   version "1.7.2"
   resolved "https://registry.npmjs.org/@reown/appkit-controllers/-/appkit-controllers-1.7.2.tgz"
@@ -3481,10 +3414,28 @@
     valtio "1.13.2"
     viem ">=2.23.11"
 
+"@reown/appkit-controllers@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-controllers/-/appkit-controllers-1.7.3.tgz"
+  integrity sha512-aqAcX/nZe0gwqjncyCkVrAk3lEw0qZ9xGrdLOmA207RreO4J0Vxu8OJXCBn4C2AUI2OpBxCPah+vyuKTUJTeHQ==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-wallet" "1.7.3"
+    "@walletconnect/universal-provider" "2.19.2"
+    valtio "1.13.2"
+    viem ">=2.23.11"
+
 "@reown/appkit-polyfills@1.7.2":
   version "1.7.2"
   resolved "https://registry.npmjs.org/@reown/appkit-polyfills/-/appkit-polyfills-1.7.2.tgz"
   integrity sha512-TxCVSh9dV2tf1u+OzjzLjAwj7WHhBFufHlJ36tDp5vjXeUUne8KvYUS85Zsyg4Y9Yeh+hdSIOdL2oDCqlRxCmw==
+  dependencies:
+    buffer "6.0.3"
+
+"@reown/appkit-polyfills@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-polyfills/-/appkit-polyfills-1.7.3.tgz"
+  integrity sha512-vQUiAyI7WiNTUV4iNwv27iigdeg8JJTEo6ftUowIrKZ2/gtE2YdMtGpavuztT/qrXhrIlTjDGp5CIyv9WOTu4g==
   dependencies:
     buffer "6.0.3"
 
@@ -3500,6 +3451,18 @@
     "@reown/appkit-wallet" "1.7.2"
     lit "3.1.0"
 
+"@reown/appkit-scaffold-ui@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-scaffold-ui/-/appkit-scaffold-ui-1.7.3.tgz"
+  integrity sha512-ssB15fcjmoKQ+VfoCo7JIIK66a4SXFpCH8uK1CsMmXmKIKqPN54ohLo291fniV6mKtnJxh5Xm68slGtGrO3bmA==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-controllers" "1.7.3"
+    "@reown/appkit-ui" "1.7.3"
+    "@reown/appkit-utils" "1.7.3"
+    "@reown/appkit-wallet" "1.7.3"
+    lit "3.1.0"
+
 "@reown/appkit-ui@1.7.2":
   version "1.7.2"
   resolved "https://registry.npmjs.org/@reown/appkit-ui/-/appkit-ui-1.7.2.tgz"
@@ -3508,6 +3471,17 @@
     "@reown/appkit-common" "1.7.2"
     "@reown/appkit-controllers" "1.7.2"
     "@reown/appkit-wallet" "1.7.2"
+    lit "3.1.0"
+    qrcode "1.5.3"
+
+"@reown/appkit-ui@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-ui/-/appkit-ui-1.7.3.tgz"
+  integrity sha512-zKmFIjLp0X24pF9KtPtSHmdsh/RjEWIvz+faIbPGm4tQbwcxdg9A35HeoP0rMgKYx49SX51LgPwVXne2gYacqQ==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-controllers" "1.7.3"
+    "@reown/appkit-wallet" "1.7.3"
     lit "3.1.0"
     qrcode "1.5.3"
 
@@ -3525,6 +3499,20 @@
     valtio "1.13.2"
     viem ">=2.23.11"
 
+"@reown/appkit-utils@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-utils/-/appkit-utils-1.7.3.tgz"
+  integrity sha512-8/MNhmfri+2uu8WzBhZ5jm5llofOIa1dyXDXRC/hfrmGmCFJdrQKPpuqOFYoimo2s2g70pK4PYefvOKgZOWzgg==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-controllers" "1.7.3"
+    "@reown/appkit-polyfills" "1.7.3"
+    "@reown/appkit-wallet" "1.7.3"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/universal-provider" "2.19.2"
+    valtio "1.13.2"
+    viem ">=2.23.11"
+
 "@reown/appkit-wallet@1.7.2":
   version "1.7.2"
   resolved "https://registry.npmjs.org/@reown/appkit-wallet/-/appkit-wallet-1.7.2.tgz"
@@ -3532,6 +3520,16 @@
   dependencies:
     "@reown/appkit-common" "1.7.2"
     "@reown/appkit-polyfills" "1.7.2"
+    "@walletconnect/logger" "2.1.2"
+    zod "3.22.4"
+
+"@reown/appkit-wallet@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit-wallet/-/appkit-wallet-1.7.3.tgz"
+  integrity sha512-D0pExd0QUE71ursQPp3pq/0iFrz2oz87tOyFifrPANvH5X0RQCYn/34/kXr+BFVQzNFfCBDlYP+CniNA/S0KiQ==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-polyfills" "1.7.3"
     "@walletconnect/logger" "2.1.2"
     zod "3.22.4"
 
@@ -3549,6 +3547,24 @@
     "@reown/appkit-wallet" "1.7.2"
     "@walletconnect/types" "2.19.1"
     "@walletconnect/universal-provider" "2.19.1"
+    bs58 "6.0.0"
+    valtio "1.13.2"
+    viem ">=2.23.11"
+
+"@reown/appkit@1.7.3":
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/@reown/appkit/-/appkit-1.7.3.tgz"
+  integrity sha512-aA/UIwi/dVzxEB62xlw3qxHa3RK1YcPMjNxoGj/fHNCqL2qWmbcOXT7coCUa9RG7/Bh26FZ3vdVT2v71j6hebQ==
+  dependencies:
+    "@reown/appkit-common" "1.7.3"
+    "@reown/appkit-controllers" "1.7.3"
+    "@reown/appkit-polyfills" "1.7.3"
+    "@reown/appkit-scaffold-ui" "1.7.3"
+    "@reown/appkit-ui" "1.7.3"
+    "@reown/appkit-utils" "1.7.3"
+    "@reown/appkit-wallet" "1.7.3"
+    "@walletconnect/types" "2.19.2"
+    "@walletconnect/universal-provider" "2.19.2"
     bs58 "6.0.0"
     valtio "1.13.2"
     viem ">=2.23.11"
@@ -5850,6 +5866,52 @@
     events "3.3.0"
     uint8arrays "3.1.0"
 
+"@walletconnect/core@2.19.2":
+  version "2.19.2"
+  resolved "https://registry.npmjs.org/@walletconnect/core/-/core-2.19.2.tgz"
+  integrity sha512-iu0mgLj51AXcKpdNj8+4EdNNBd/mkNjLEhZn6UMc/r7BM9WbmpPMEydA39WeRLbdLO4kbpmq4wTbiskI1rg+HA==
+  dependencies:
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-provider" "1.0.14"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/jsonrpc-ws-connection" "1.0.16"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/relay-api" "1.0.11"
+    "@walletconnect/relay-auth" "1.1.0"
+    "@walletconnect/safe-json" "1.0.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.19.2"
+    "@walletconnect/utils" "2.19.2"
+    "@walletconnect/window-getters" "1.0.1"
+    es-toolkit "1.33.0"
+    events "3.3.0"
+    uint8arrays "3.1.0"
+
+"@walletconnect/core@2.21.0":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/core/-/core-2.21.0.tgz"
+  integrity sha512-o6R7Ua4myxR8aRUAJ1z3gT9nM+jd2B2mfamu6arzy1Cc6vi10fIwFWb6vg3bC8xJ6o9H3n/cN5TOW3aA9Y1XVw==
+  dependencies:
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-provider" "1.0.14"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/jsonrpc-ws-connection" "1.0.16"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/relay-api" "1.0.11"
+    "@walletconnect/relay-auth" "1.1.0"
+    "@walletconnect/safe-json" "1.0.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.21.0"
+    "@walletconnect/utils" "2.21.0"
+    "@walletconnect/window-getters" "1.0.1"
+    es-toolkit "1.33.0"
+    events "3.3.0"
+    uint8arrays "3.1.0"
+
 "@walletconnect/environment@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@walletconnect/environment/-/environment-1.0.1.tgz"
@@ -5857,21 +5919,21 @@
   dependencies:
     tslib "1.14.1"
 
-"@walletconnect/ethereum-provider@^2.12.2":
-  version "2.19.1"
-  resolved "https://registry.npmjs.org/@walletconnect/ethereum-provider/-/ethereum-provider-2.19.1.tgz"
-  integrity sha512-bs8Kiwdw3cGb8ITO8+YymesGfFnucJreQmVbZ0vl/Ogoh38n1T5w0ekjmD/NjTDS3oZaUQyBm3V2UjIBR0qedw==
+"@walletconnect/ethereum-provider@^2.17.3":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/ethereum-provider/-/ethereum-provider-2.21.0.tgz"
+  integrity sha512-L0XtIgte9owZXQEWI/8CuCbrjs18S9hgLeQEgAE72LAzIG5FiutZEDRj9K3IajZUYW60/lNujYWHCNcfapEtkQ==
   dependencies:
+    "@reown/appkit" "1.7.3"
     "@walletconnect/jsonrpc-http-connection" "1.0.8"
     "@walletconnect/jsonrpc-provider" "1.0.14"
     "@walletconnect/jsonrpc-types" "1.0.4"
     "@walletconnect/jsonrpc-utils" "1.0.8"
     "@walletconnect/keyvaluestorage" "1.1.1"
-    "@walletconnect/modal" "2.7.0"
-    "@walletconnect/sign-client" "2.19.1"
-    "@walletconnect/types" "2.19.1"
-    "@walletconnect/universal-provider" "2.19.1"
-    "@walletconnect/utils" "2.19.1"
+    "@walletconnect/sign-client" "2.21.0"
+    "@walletconnect/types" "2.21.0"
+    "@walletconnect/universal-provider" "2.21.0"
+    "@walletconnect/utils" "2.21.0"
     events "3.3.0"
 
 "@walletconnect/events@^1.0.1", "@walletconnect/events@1.0.1":
@@ -5954,31 +6016,6 @@
     "@walletconnect/safe-json" "^1.0.2"
     pino "7.11.0"
 
-"@walletconnect/modal-core@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.npmjs.org/@walletconnect/modal-core/-/modal-core-2.7.0.tgz"
-  integrity sha512-oyMIfdlNdpyKF2kTJowTixZSo0PGlCJRdssUN/EZdA6H6v03hZnf09JnwpljZNfir2M65Dvjm/15nGrDQnlxSA==
-  dependencies:
-    valtio "1.11.2"
-
-"@walletconnect/modal-ui@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.npmjs.org/@walletconnect/modal-ui/-/modal-ui-2.7.0.tgz"
-  integrity sha512-gERYvU7D7K1ANCN/8vUgsE0d2hnRemfAFZ2novm9aZBg7TEd/4EgB+AqbJ+1dc7GhOL6dazckVq78TgccHb7mQ==
-  dependencies:
-    "@walletconnect/modal-core" "2.7.0"
-    lit "2.8.0"
-    motion "10.16.2"
-    qrcode "1.5.3"
-
-"@walletconnect/modal@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.npmjs.org/@walletconnect/modal/-/modal-2.7.0.tgz"
-  integrity sha512-RQVt58oJ+rwqnPcIvRFeMGKuXb9qkgSmwz4noF8JZGUym3gUAzVs+uW2NQ1Owm9XOJAV+sANrtJ+VoVq1ftElw==
-  dependencies:
-    "@walletconnect/modal-core" "2.7.0"
-    "@walletconnect/modal-ui" "2.7.0"
-
 "@walletconnect/relay-api@1.0.11":
   version "1.0.11"
   resolved "https://registry.npmjs.org/@walletconnect/relay-api/-/relay-api-1.0.11.tgz"
@@ -6034,6 +6071,36 @@
     "@walletconnect/utils" "2.19.1"
     events "3.3.0"
 
+"@walletconnect/sign-client@2.19.2":
+  version "2.19.2"
+  resolved "https://registry.npmjs.org/@walletconnect/sign-client/-/sign-client-2.19.2.tgz"
+  integrity sha512-a/K5PRIFPCjfHq5xx3WYKHAAF8Ft2I1LtxloyibqiQOoUtNLfKgFB1r8sdMvXM7/PADNPe4iAw4uSE6PrARrfg==
+  dependencies:
+    "@walletconnect/core" "2.19.2"
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.19.2"
+    "@walletconnect/utils" "2.19.2"
+    events "3.3.0"
+
+"@walletconnect/sign-client@2.21.0":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/sign-client/-/sign-client-2.21.0.tgz"
+  integrity sha512-z7h+PeLa5Au2R591d/8ZlziE0stJvdzP9jNFzFolf2RG/OiXulgFKum8PrIyXy+Rg2q95U9nRVUF9fWcn78yBA==
+  dependencies:
+    "@walletconnect/core" "2.21.0"
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.21.0"
+    "@walletconnect/utils" "2.21.0"
+    events "3.3.0"
+
 "@walletconnect/solana-adapter@^0.0.8":
   version "0.0.8"
   resolved "https://registry.npmjs.org/@walletconnect/solana-adapter/-/solana-adapter-0.0.8.tgz"
@@ -6075,6 +6142,30 @@
     "@walletconnect/logger" "2.1.2"
     events "3.3.0"
 
+"@walletconnect/types@2.19.2":
+  version "2.19.2"
+  resolved "https://registry.npmjs.org/@walletconnect/types/-/types-2.19.2.tgz"
+  integrity sha512-/LZWhkVCUN+fcTgQUxArxhn2R8DF+LSd/6Wh9FnpjeK/Sdupx1EPS8okWG6WPAqq2f404PRoNAfQytQ82Xdl3g==
+  dependencies:
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    events "3.3.0"
+
+"@walletconnect/types@2.21.0":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/types/-/types-2.21.0.tgz"
+  integrity sha512-ll+9upzqt95ZBWcfkOszXZkfnpbJJ2CmxMfGgE5GmhdxxxCcO5bGhXkI+x8OpiS555RJ/v/sXJYMSOLkmu4fFw==
+  dependencies:
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/heartbeat" "1.2.2"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    events "3.3.0"
+
 "@walletconnect/universal-provider@2.19.0":
   version "2.19.0"
   resolved "https://registry.npmjs.org/@walletconnect/universal-provider/-/universal-provider-2.19.0.tgz"
@@ -6108,6 +6199,42 @@
     "@walletconnect/sign-client" "2.19.1"
     "@walletconnect/types" "2.19.1"
     "@walletconnect/utils" "2.19.1"
+    es-toolkit "1.33.0"
+    events "3.3.0"
+
+"@walletconnect/universal-provider@2.19.2":
+  version "2.19.2"
+  resolved "https://registry.npmjs.org/@walletconnect/universal-provider/-/universal-provider-2.19.2.tgz"
+  integrity sha512-LkKg+EjcSUpPUhhvRANgkjPL38wJPIWumAYD8OK/g4OFuJ4W3lS/XTCKthABQfFqmiNbNbVllmywiyE44KdpQg==
+  dependencies:
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/jsonrpc-http-connection" "1.0.8"
+    "@walletconnect/jsonrpc-provider" "1.0.14"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/sign-client" "2.19.2"
+    "@walletconnect/types" "2.19.2"
+    "@walletconnect/utils" "2.19.2"
+    es-toolkit "1.33.0"
+    events "3.3.0"
+
+"@walletconnect/universal-provider@2.21.0":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/universal-provider/-/universal-provider-2.21.0.tgz"
+  integrity sha512-mtUQvewt+X0VBQay/xOJBvxsB3Xsm1lTwFjZ6WUwSOTR1X+FNb71hSApnV5kbsdDIpYPXeQUbGt2se1n5E5UBg==
+  dependencies:
+    "@walletconnect/events" "1.0.1"
+    "@walletconnect/jsonrpc-http-connection" "1.0.8"
+    "@walletconnect/jsonrpc-provider" "1.0.14"
+    "@walletconnect/jsonrpc-types" "1.0.4"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/sign-client" "2.21.0"
+    "@walletconnect/types" "2.21.0"
+    "@walletconnect/utils" "2.21.0"
     es-toolkit "1.33.0"
     events "3.3.0"
 
@@ -6154,6 +6281,52 @@
     bs58 "6.0.0"
     detect-browser "5.3.0"
     elliptic "6.6.1"
+    query-string "7.1.3"
+    uint8arrays "3.1.0"
+    viem "2.23.2"
+
+"@walletconnect/utils@2.19.2":
+  version "2.19.2"
+  resolved "https://registry.npmjs.org/@walletconnect/utils/-/utils-2.19.2.tgz"
+  integrity sha512-VU5CcUF4sZDg8a2/ov29OJzT3KfLuZqJUM0GemW30dlipI5fkpb0VPenZK7TcdLPXc1LN+Q+7eyTqHRoAu/BIA==
+  dependencies:
+    "@noble/ciphers" "1.2.1"
+    "@noble/curves" "1.8.1"
+    "@noble/hashes" "1.7.1"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/relay-api" "1.0.11"
+    "@walletconnect/relay-auth" "1.1.0"
+    "@walletconnect/safe-json" "1.0.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.19.2"
+    "@walletconnect/window-getters" "1.0.1"
+    "@walletconnect/window-metadata" "1.0.1"
+    bs58 "6.0.0"
+    detect-browser "5.3.0"
+    query-string "7.1.3"
+    uint8arrays "3.1.0"
+    viem "2.23.2"
+
+"@walletconnect/utils@2.21.0":
+  version "2.21.0"
+  resolved "https://registry.npmjs.org/@walletconnect/utils/-/utils-2.21.0.tgz"
+  integrity sha512-zfHLiUoBrQ8rP57HTPXW7rQMnYxYI4gT9yTACxVW6LhIFROTF6/ytm5SKNoIvi4a5nX5dfXG4D9XwQUCu8Ilig==
+  dependencies:
+    "@noble/ciphers" "1.2.1"
+    "@noble/curves" "1.8.1"
+    "@noble/hashes" "1.7.1"
+    "@walletconnect/jsonrpc-utils" "1.0.8"
+    "@walletconnect/keyvaluestorage" "1.1.1"
+    "@walletconnect/relay-api" "1.0.11"
+    "@walletconnect/relay-auth" "1.1.0"
+    "@walletconnect/safe-json" "1.0.2"
+    "@walletconnect/time" "1.0.2"
+    "@walletconnect/types" "2.21.0"
+    "@walletconnect/window-getters" "1.0.1"
+    "@walletconnect/window-metadata" "1.0.1"
+    bs58 "6.0.0"
+    detect-browser "5.3.0"
     query-string "7.1.3"
     uint8arrays "3.1.0"
     viem "2.23.2"
@@ -6243,13 +6416,13 @@
     "@web3-onboard/core" "2.24.0"
     use-sync-external-store "1.0.0"
 
-"@web3-onboard/walletconnect@^2.5.5":
-  version "2.5.5"
-  resolved "https://registry.npmjs.org/@web3-onboard/walletconnect/-/walletconnect-2.5.5.tgz"
-  integrity sha512-+ShSG20r783R+a1bPsbA6ofPTtVz2BFR8Z2/dQKsM+alQKAzBVprWjYW+PE+Mg/IC8QspiLWz/GXXLzLxYxeKw==
+"@web3-onboard/walletconnect@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.npmjs.org/@web3-onboard/walletconnect/-/walletconnect-2.6.2.tgz"
+  integrity sha512-eecRCcwgOHbWw2thf03EbbyFnnUsf4G2mcIhLfiWG51Vf0oGSK/QcaINlBEZpY6SK2xH5nnXJtQomLDvfbAM2A==
   dependencies:
-    "@walletconnect/ethereum-provider" "^2.12.2"
-    "@web3-onboard/common" "^2.3.3"
+    "@walletconnect/ethereum-provider" "^2.17.3"
+    "@web3-onboard/common" "^2.4.1"
     joi "17.9.1"
     rxjs "^7.5.2"
 
@@ -7132,6 +7305,14 @@ buffer-layout@^1.2.0, buffer-layout@^1.2.2:
   version "1.2.2"
   resolved "https://registry.npmjs.org/buffer-layout/-/buffer-layout-1.2.2.tgz"
   integrity sha512-kWSuLN694+KTk8SrYvCqwP2WcgQjoRCiF5b4QDvkkz8EmgD+aWAIceGFKMIAdmF/pH+vpgNV3d3kAKorcdAmWA==
+
+"buffer-polyfill@npm:buffer@^6.0.3":
+  version "6.0.3"
+  resolved "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz"
+  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
+  dependencies:
+    base64-js "^1.3.1"
+    ieee754 "^1.2.1"
 
 buffer-xor@^1.0.3:
   version "1.0.3"
@@ -9891,11 +10072,6 @@ hermes-parser@0.28.1:
   dependencies:
     hermes-estree "0.28.1"
 
-hey-listen@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
-  integrity sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==
-
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz"
@@ -10897,15 +11073,6 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lit-element@^3.3.0:
-  version "3.3.3"
-  resolved "https://registry.npmjs.org/lit-element/-/lit-element-3.3.3.tgz"
-  integrity sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==
-  dependencies:
-    "@lit-labs/ssr-dom-shim" "^1.1.0"
-    "@lit/reactive-element" "^1.3.0"
-    lit-html "^2.8.0"
-
 lit-element@^4.0.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/lit-element/-/lit-element-4.2.0.tgz"
@@ -10915,28 +11082,12 @@ lit-element@^4.0.0:
     "@lit/reactive-element" "^2.1.0"
     lit-html "^3.3.0"
 
-lit-html@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.npmjs.org/lit-html/-/lit-html-2.8.0.tgz"
-  integrity sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==
-  dependencies:
-    "@types/trusted-types" "^2.0.2"
-
 lit-html@^3.1.0, lit-html@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/lit-html/-/lit-html-3.3.0.tgz"
   integrity sha512-RHoswrFAxY2d8Cf2mm4OZ1DgzCoBKUKSPvA1fhtSELxUERq2aQQ2h05pO9j81gS1o7RIRJ+CePLogfyahwmynw==
   dependencies:
     "@types/trusted-types" "^2.0.2"
-
-lit@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.npmjs.org/lit/-/lit-2.8.0.tgz"
-  integrity sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==
-  dependencies:
-    "@lit/reactive-element" "^1.6.0"
-    lit-element "^3.3.0"
-    lit-html "^2.8.0"
 
 lit@3.1.0:
   version "3.1.0"
@@ -12052,18 +12203,6 @@ morgan@^1.10.0:
     on-finished "~2.3.0"
     on-headers "~1.0.2"
 
-motion@10.16.2:
-  version "10.16.2"
-  resolved "https://registry.npmjs.org/motion/-/motion-10.16.2.tgz"
-  integrity sha512-p+PurYqfUdcJZvtnmAqu5fJgV2kR0uLFQuBKtLeFVTrYEVllI99tiOTSefVNYuip9ELTEkepIIDftNdze76NAQ==
-  dependencies:
-    "@motionone/animation" "^10.15.1"
-    "@motionone/dom" "^10.16.2"
-    "@motionone/svelte" "^10.16.2"
-    "@motionone/types" "^10.15.1"
-    "@motionone/utils" "^10.15.1"
-    "@motionone/vue" "^10.16.2"
-
 mri@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/mri/-/mri-1.2.0.tgz"
@@ -12688,17 +12827,17 @@ path-type@^4.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-pathe@^1.1.1:
+pathe@^1.1.1, pathe@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/pathe/-/pathe-1.1.2.tgz"
   integrity sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==
 
-pathe@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/pathe/-/pathe-1.1.2.tgz"
-  integrity sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==
+pathe@^2.0.1:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/pathe/-/pathe-2.0.3.tgz"
+  integrity sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==
 
-pathe@^2.0.1, pathe@^2.0.3:
+pathe@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npmjs.org/pathe/-/pathe-2.0.3.tgz"
   integrity sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==
@@ -13053,11 +13192,6 @@ proxy-addr@~2.0.7:
   dependencies:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
-
-proxy-compare@2.5.1:
-  version "2.5.1"
-  resolved "https://registry.npmjs.org/proxy-compare/-/proxy-compare-2.5.1.tgz"
-  integrity sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==
 
 proxy-compare@2.6.0:
   version "2.6.0"
@@ -13449,7 +13583,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@*, "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19", "react@^15.5.3 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0-rc", "react@^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc", "react@^17.0.2 || ^18", react@^18.0.0, react@^18.2.0, react@^18.3.1, react@^19.1.0, "react@>= 16.8.0", react@>=16, react@>=16.13.1, react@>=16.6.0, react@>=16.8, react@>=16.8.0, react@>=18, react@~16:
+react@*, "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19", "react@^15.5.3 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0-rc", "react@^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc", "react@^17.0.2 || ^18", react@^18.0.0, react@^18.2.0, react@^18.3.1, "react@>= 16.8.0", react@>=16, react@>=16.13.1, react@>=16.6.0, react@>=16.8, react@>=16.8.0, react@>=18, react@~16:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -13968,11 +14102,6 @@ scheduler@^0.23.0, scheduler@^0.23.2:
   integrity sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==
   dependencies:
     loose-envify "^1.1.0"
-
-scheduler@^0.26.0:
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz"
-  integrity sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==
 
 scheduler@0.25.0:
   version "0.25.0"
@@ -14927,7 +15056,7 @@ tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1, tslib@^2.4.0, tslib@^2.4.1, tslib@^2.6.2, tslib@^2.8.0, tslib@2:
+tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0, tslib@^2.4.1, tslib@^2.6.2, tslib@^2.8.0, tslib@2:
   version "2.8.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
@@ -15407,14 +15536,6 @@ valtio@*, valtio@1.13.2:
     proxy-compare "2.6.0"
     use-sync-external-store "1.2.0"
 
-valtio@1.11.2:
-  version "1.11.2"
-  resolved "https://registry.npmjs.org/valtio/-/valtio-1.11.2.tgz"
-  integrity sha512-1XfIxnUXzyswPAPXo1P3Pdx2mq/pIqZICkWN60Hby0d9Iqb+MEIpqgYVlbflvHdrp2YR/q3jyKWRPJJ100yxaw==
-  dependencies:
-    proxy-compare "2.5.1"
-    use-sync-external-store "1.2.0"
-
 varuint-bitcoin@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/varuint-bitcoin/-/varuint-bitcoin-2.0.0.tgz"
@@ -15540,13 +15661,15 @@ vite-plugin-cjs-interop@^2.1.6:
     magic-string "^0.30.14"
     minimatch "^10.0.1"
 
-vite-plugin-node-polyfills@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.npmjs.org/vite-plugin-node-polyfills/-/vite-plugin-node-polyfills-0.23.0.tgz"
-  integrity sha512-4n+Ys+2bKHQohPBKigFlndwWQ5fFKwaGY6muNDMTb0fSQLyBzS+jjUNRZG9sKF0S/Go4ApG6LFnUGopjkILg3w==
+vite-plugin-node-polyfills@0.17.0:
+  version "0.17.0"
+  resolved "https://registry.npmjs.org/vite-plugin-node-polyfills/-/vite-plugin-node-polyfills-0.17.0.tgz"
+  integrity sha512-iPmPn7376e5u6QvoTSJa16hf5Q0DFwHFXJk2uYpsNlmI3JdPms7hWyh55o+OysJ5jo9J5XPhLC9sMOYifwFd1w==
   dependencies:
     "@rollup/plugin-inject" "^5.0.5"
+    buffer-polyfill "npm:buffer@^6.0.3"
     node-stdlib-browser "^1.2.0"
+    process "^0.11.10"
 
 vite-tsconfig-paths@^4.2.1:
   version "4.3.2"
@@ -15557,7 +15680,7 @@ vite-tsconfig-paths@^4.2.1:
     globrex "^0.1.2"
     tsconfck "^3.0.3"
 
-vite@*, "vite@^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0", vite@^5.0.0, "vite@^5.0.0 || ^6.0.0", vite@^5.0.11, vite@^5.1.0, "vite@^5.1.0 || ^6.0.0", "vite@4 || 5 || 6":
+vite@*, "vite@^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0", vite@^5.0.0, "vite@^5.0.0 || ^6.0.0", vite@^5.0.11, vite@^5.1.0, "vite@^5.1.0 || ^6.0.0", "vite@4 || 5 || 6":
   version "5.4.19"
   resolved "https://registry.npmjs.org/vite/-/vite-5.4.19.tgz"
   integrity sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==
@@ -15802,10 +15925,10 @@ write-file-atomic@^4.0.2:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.7"
 
-ws@*, ws@^7, ws@^7.4.0, ws@^7.5.1, ws@^7.5.10:
-  version "7.5.10"
-  resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz"
-  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
+ws@*, ws@^8.13.0, ws@^8.18.0, ws@^8.5.0, ws@8.18.0:
+  version "8.18.0"
+  resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
+  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
 
 ws@^6.2.3:
   version "6.2.3"
@@ -15814,20 +15937,25 @@ ws@^6.2.3:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^8.13.0:
-  version "8.18.0"
-  resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
-  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+ws@^7:
+  version "7.5.10"
+  resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz"
+  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
-ws@^8.18.0:
-  version "8.18.0"
-  resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
-  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+ws@^7.4.0:
+  version "7.5.10"
+  resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz"
+  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
-ws@^8.5.0:
-  version "8.18.0"
-  resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
-  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+ws@^7.5.1:
+  version "7.5.10"
+  resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz"
+  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
+
+ws@^7.5.10:
+  version "7.5.10"
+  resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz"
+  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
 ws@~8.17.1:
   version "8.17.1"
@@ -15843,11 +15971,6 @@ ws@8.17.1:
   version "8.17.1"
   resolved "https://registry.npmjs.org/ws/-/ws-8.17.1.tgz"
   integrity sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==
-
-ws@8.18.0:
-  version "8.18.0"
-  resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
-  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
 
 ws@8.18.2:
   version "8.18.2"
