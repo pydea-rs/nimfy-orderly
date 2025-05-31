@@ -1,9 +1,9 @@
-module.exports = {
+export default {
   apps: [
     {
       name: "NincoFi",
-      script: "serve",
-      args: "-s build -l 5173",
+      script: "build",
+      args: "-s dist -l 5173",
       env: {
         NODE_ENV: "production",
       },
