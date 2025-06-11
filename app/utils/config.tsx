@@ -8,7 +8,6 @@ import { AppLogos } from "@orderly.network/react-app";
 import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/nimco";
 import SwapTradeSwitch from "@/components/common/swap-trade-switch";
 import {
-  LeaderboardActiveIcon,
   LeaderboardInactiveIcon,
   PortfolioActiveIcon,
   PortfolioInactiveIcon,

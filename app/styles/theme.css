@@ -1,5 +1,6 @@
 :root {
-  --oui-font-family: "Manrope", sans-serif;
+  --oui-font-family: "InterItalic", "Inter", "SatoshiBlack", "ZenDots",
+    sans-serif;
 
   /* colors */
   --oui-color-primary: 176 132 233;

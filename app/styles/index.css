@@ -11,3 +11,7 @@ div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-no
   ):has(svg) {
   visibility: hidden !important;
 }
+
+* {
+  font-weight: 700 !important;
+}
