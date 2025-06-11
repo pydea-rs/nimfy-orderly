@@ -2,12 +2,11 @@ export default {
   apps: [
     {
       name: "NincoFi",
-      script: "/usr/local/bin/serve",
-      args: "-s build -l 5173",
-      exec_mode: "fork", // important!
-      interpreter: "bash", // treat as shell command
+      script: "npx",
+      args: "remix-serve ./build/server/index.js",
       env: {
         NODE_ENV: "production",
+        PORT: 3000,
       },
     },
   ],

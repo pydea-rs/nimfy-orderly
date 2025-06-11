@@ -1,1 +1,0 @@
-import{j as t}from"./index-_b-vxSi4.js";import{q as r}from"./index-BASOWVDd.js";import{g as e}from"./utils-OKWQP5Dn.js";import"./index-09RN6Rey.js";import"./embla-carousel-react.esm-DDFcFn3T.js";import"./Trans-mxr8gQX7.js";const n=()=>[{title:e("Markets")}];function f(){return t.jsx(r,{})}export{f as default,n as meta};

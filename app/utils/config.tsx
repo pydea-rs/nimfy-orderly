@@ -2,6 +2,7 @@ import { TradingPageProps } from "@orderly.network/trading";
 import { FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
 import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/nimco";
+import SwapTradeSwitch from "@/components/common/swap-trade-switch";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -20,6 +21,7 @@ export type OrderlyConfig = {
 const config: OrderlyConfig = {
   scaffold: {
     mainNavProps: {
+      leading: <SwapTradeSwitch />,
       initialMenu: "/",
       mainMenus: [
         { name: "Trading", href: "/" },
@@ -29,41 +31,40 @@ const config: OrderlyConfig = {
       campaigns: {
         name: "Reward",
         href: "/rewards",
+        icon: "/reward-logo.png",
         children: [
           {
             name: "Trading rewards",
-            href: "https://app.orderly.network/tradingRewards",
-            description: "Trade with Orderly to earn ORDER",
+            href: "#",
+            description: "Coming Soon...",
             icon: <OrderlyIcon size={14} />,
             activeIcon: <OrderlyActiveIcon size={14} />,
-            target: "_blank",
+            // target: "_blank",
+            disabled: true,
           },
 
           {
             name: "Staking",
-            href: "https://app.orderly.network/staking",
-            description: "Stake ORDER/esORDER to acquire VALOR",
+            href: "#",
+            description: "Coming Soon...",
             icon: <OrderlyIcon size={14} />,
             activeIcon: <OrderlyActiveIcon size={14} />,
-            target: "_blank",
+            // target: "_blank",
+            disabled: true,
           },
         ],
       },
     },
     footerProps: {
-      // telegramUrl: "https://orderly.network",
-      discordUrl: "https://discord.gg/MA98WqRjbd",
-      twitterUrl: "https://x.com/winmore_xyz",
+      // telegramUrl: "https://t.me",
+      discordUrl: "https://discord.gg/Bvar3BRhrY",
+      twitterUrl: "https://x.com/ninco_fi",
       trailing: (
-        <span className="oui-text-2xs oui-text-base-contrast-54">
-          Charts powered by{" "}
-          <a
-            href="https://tradingview.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TradingView
-          </a>
+        <span
+          className="oui-text-2xs oui-text-base-contrast-54"
+          style={{ position: "absolute", right: 10 }}
+        >
+          Ninco Finance
         </span>
       ),
     },
@@ -71,7 +72,7 @@ const config: OrderlyConfig = {
   orderlyAppProvider: {
     appIcons: {
       main: {
-        img: "/logo.svg",
+        img: "/logo.png",
       },
       secondary: {
         img: "/logo-secondary.svg",

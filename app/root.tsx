@@ -7,8 +7,13 @@ import {
 } from "@remix-run/react";
 import NimcoProvider from "@/components/nimcoProvider";
 import "./styles/index.css";
+import { useEffect } from "react";
+import { applyCustomInitConfigs } from "./utils/utils";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    applyCustomInitConfigs();
+  }, []);
   return (
     <html lang="en">
       <head>

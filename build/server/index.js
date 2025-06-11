@@ -21,7 +21,7 @@ var _listener, _listeners, _cancelled, _allowInsecure, _gzip, _headers, _method,
 import { jsx, jsxs, Fragment as Fragment$1 } from "react/jsx-runtime";
 import { PassThrough } from "node:stream";
 import { createReadableStreamFromReadable, redirect } from "@remix-run/node";
-import { RemixServer, Outlet, Meta, Links, ScrollRestoration, Scripts, useNavigate, useSearchParams, useParams, useLocation } from "@remix-run/react";
+import { RemixServer, Link, Outlet, Meta, Links, ScrollRestoration, Scripts, useNavigate, useSearchParams, useParams, useLocation } from "@remix-run/react";
 import * as isbotModule from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import * as ze__default from "react";
@@ -35392,117 +35392,75 @@ function Lr$3(e2) {
 }
 const OrderlyIcon = (props) => {
   const { size = 14, ...rest } = props;
-  return /* @__PURE__ */ jsxs(
+  return /* @__PURE__ */ jsx(
     "svg",
     {
-      width: `${size}px`,
-      height: `${size}px`,
-      viewBox: "0 0 14 14",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg",
       ...rest,
-      children: [
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M6.98336 0.00840759L7.01663 0.0084076C8.7717 0.0124856 10.375 0.661681 11.6015 1.73116C11.6884 1.80694 11.6334 1.94602 11.518 1.94602L2.48196 1.94602C2.36659 1.94602 2.31155 1.80694 2.39846 1.73116C3.62496 0.661681 5.22829 0.0124854 6.98336 0.00840759Z",
-            fill: "white",
-            fillOpacity: "0.54"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M4.27699 8.90344C4.22691 8.83211 4.14627 8.78729 4.05904 8.78729L0.43836 8.78729C0.333471 8.78729 0.256996 8.88663 0.28676 8.98708C1.144 11.8804 3.82515 13.9914 6.99995 13.9914C10.1747 13.9914 12.8559 11.8804 13.7131 8.98708C13.7429 8.88663 13.6664 8.78729 13.5615 8.78729L9.94092 8.78729C9.85369 8.78729 9.77305 8.83211 9.72296 8.90344C9.12187 9.75954 8.12636 10.3192 6.99998 10.3192C5.87359 10.3192 4.87808 9.75954 4.27699 8.90344Z",
-            fill: "white",
-            fillOpacity: "0.54"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M9.63607 4.97781C9.70006 5.06094 9.79754 5.11306 9.90253 5.11306L13.5313 5.11306C13.6371 5.11306 13.7138 5.01213 13.6822 4.9112C13.408 4.035 12.9658 3.2329 12.3933 2.54255C12.3456 2.48508 12.2744 2.45264 12.1997 2.45264L1.79998 2.45264C1.72527 2.45264 1.65409 2.48508 1.60644 2.54255C1.03391 3.2329 0.591703 4.035 0.317483 4.9112C0.285896 5.01213 0.362554 5.11306 0.468425 5.11306L4.09718 5.11306C4.20217 5.11306 4.29964 5.06094 4.36364 4.97781C4.97123 4.18863 5.92608 3.68002 6.99985 3.68002C8.07363 3.68002 9.02847 4.18863 9.63607 4.97781Z",
-            fill: "white",
-            fillOpacity: "0.54"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M10.2113 8.28152C10.1428 8.28152 10.0962 8.21175 10.1199 8.14751C10.2516 7.79013 10.3235 7.40386 10.3235 7.00082C10.3235 6.56144 10.2381 6.14199 10.0828 5.75817C10.0566 5.69344 10.1033 5.6211 10.1732 5.6211L13.7326 5.6211C13.8088 5.6211 13.8747 5.67479 13.8882 5.74971C13.9617 6.15568 14 6.57383 14 7.00093C14 7.39252 13.9678 7.77659 13.9058 8.15064C13.8932 8.22662 13.8269 8.28152 13.7498 8.28152L10.2113 8.28152ZM3.8801 8.14751C3.90378 8.21175 3.8572 8.28152 3.78867 8.28152L0.250192 8.28152C0.173095 8.28152 0.106775 8.22662 0.0941906 8.15064C0.0322319 7.77659 0 7.39252 0 7.00093C0 6.57383 0.0383425 6.15567 0.111777 5.74971C0.125329 5.67479 0.191156 5.6211 0.267378 5.6211L3.82684 5.6211C3.89673 5.6211 3.94336 5.69344 3.91718 5.75817C3.76195 6.14199 3.67648 6.56144 3.67648 7.00082C3.67648 7.40386 3.74839 7.79013 3.8801 8.14751Z",
-            fill: "white",
-            fillOpacity: "0.54"
-          }
-        )
-      ]
+      children: /* @__PURE__ */ jsx("g", { transform: "translate(24, 0) scale(-1, 1)", children: /* @__PURE__ */ jsx(
+        "path",
+        {
+          fillRule: "evenodd",
+          clipRule: "evenodd",
+          d: "M6 3V21H9L15 9.5V21H18V3H15L9 14.5V3H6Z",
+          fill: "white",
+          fillOpacity: "0.98"
+        }
+      ) })
     }
   );
 };
 const OrderlyActiveIcon = (props) => {
   const { size = 14, ...rest } = props;
-  return /* @__PURE__ */ jsxs(
+  return /* @__PURE__ */ jsx(
     "svg",
     {
-      width: `${size}px`,
-      height: `${size}px`,
-      viewBox: "0 0 14 14",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg",
       ...rest,
-      children: [
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M6.98336 0.00839233L7.01663 0.00839234C8.7717 0.0124704 10.375 0.661666 11.6015 1.73115C11.6884 1.80693 11.6334 1.946 11.518 1.946L2.48196 1.946C2.36659 1.946 2.31155 1.80693 2.39846 1.73114C3.62496 0.661666 5.22829 0.0124701 6.98336 0.00839233Z",
-            fill: "white",
-            fillOpacity: "0.98"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M4.27699 8.90341C4.22691 8.83208 4.14627 8.78726 4.05904 8.78726L0.43836 8.78726C0.333471 8.78726 0.256996 8.8866 0.28676 8.98706C1.144 11.8804 3.82515 13.9914 6.99995 13.9914C10.1747 13.9914 12.8559 11.8804 13.7131 8.98706C13.7429 8.8866 13.6664 8.78726 13.5615 8.78726L9.94092 8.78726C9.85369 8.78726 9.77305 8.83208 9.72296 8.90341C9.12187 9.75952 8.12636 10.3192 6.99998 10.3192C5.87359 10.3192 4.87808 9.75952 4.27699 8.90341Z",
-            fill: "white",
-            fillOpacity: "0.98"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M9.63607 4.97781C9.70006 5.06093 9.79754 5.11306 9.90253 5.11306L13.5313 5.11306C13.6371 5.11306 13.7138 5.01213 13.6822 4.9112C13.408 4.03499 12.9658 3.2329 12.3933 2.54254C12.3456 2.48508 12.2744 2.45264 12.1997 2.45264L1.79998 2.45264C1.72527 2.45264 1.65409 2.48508 1.60644 2.54254C1.03391 3.2329 0.591703 4.03499 0.317483 4.9112C0.285896 5.01213 0.362554 5.11306 0.468425 5.11306L4.09718 5.11306C4.20217 5.11306 4.29964 5.06093 4.36364 4.97781C4.97123 4.18863 5.92608 3.68002 6.99985 3.68002C8.07363 3.68002 9.02847 4.18863 9.63607 4.97781Z",
-            fill: "white",
-            fillOpacity: "0.98"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M10.2113 8.28152C10.1428 8.28152 10.0962 8.21175 10.1199 8.14751C10.2516 7.79012 10.3235 7.40386 10.3235 7.00082C10.3235 6.56143 10.2381 6.14199 10.0828 5.75816C10.0566 5.69344 10.1033 5.62109 10.1732 5.62109L13.7326 5.62109C13.8088 5.62109 13.8747 5.67479 13.8882 5.74971C13.9617 6.15567 14 6.57383 14 7.00093C14 7.39252 13.9678 7.77659 13.9058 8.15064C13.8932 8.22661 13.8269 8.28152 13.7498 8.28152L10.2113 8.28152ZM3.8801 8.14751C3.90378 8.21175 3.8572 8.28152 3.78867 8.28152L0.250192 8.28152C0.173095 8.28152 0.106775 8.22661 0.0941906 8.15064C0.0322319 7.77659 0 7.39252 0 7.00093C0 6.57383 0.0383425 6.15567 0.111777 5.74971C0.125329 5.67479 0.191156 5.62109 0.267378 5.62109L3.82684 5.62109C3.89673 5.62109 3.94336 5.69344 3.91718 5.75816C3.76195 6.14199 3.67648 6.56143 3.67648 7.00082C3.67648 7.40386 3.74839 7.79012 3.8801 8.14751Z",
-            fill: "white",
-            fillOpacity: "0.98"
-          }
-        )
-      ]
+      children: /* @__PURE__ */ jsx("g", { transform: "translate(24, 0) scale(-1, 1)", children: /* @__PURE__ */ jsx(
+        "path",
+        {
+          fillRule: "evenodd",
+          clipRule: "evenodd",
+          d: "M6 3V21H9L15 9.5V21H18V3H15L9 14.5V3H6Z",
+          fill: "coral",
+          fillOpacity: "0.98"
+        }
+      ) })
     }
   );
 };
+const SwapTradeSwitch = () => /* @__PURE__ */ jsxs("div", { className: "flex items-center bg-[#1A1A1A] p-1 rounded-md", children: [
+  /* @__PURE__ */ jsx(
+    Link,
+    {
+      to: "#",
+      "aria-disabled": true,
+      className: "px-4 py-1 rounded-md text-sm text-gray-500 bg-transparent cursor-not-allowed",
+      children: "Swap"
+    }
+  ),
+  /* @__PURE__ */ jsx(
+    Link,
+    {
+      to: "/",
+      className: "px-4 py-1 rounded-md text-sm text-white bg-gradient-to-r from-purple-500 to-purple-600",
+      children: "Trade"
+    }
+  )
+] });
 const config = {
   scaffold: {
     mainNavProps: {
+      leading: /* @__PURE__ */ jsx(SwapTradeSwitch, {}),
       initialMenu: "/",
       mainMenus: [
         { name: "Trading", href: "/" },
@@ -35512,49 +35470,47 @@ const config = {
       campaigns: {
         name: "Reward",
         href: "/rewards",
+        icon: "/reward-logo.png",
         children: [
           {
             name: "Trading rewards",
-            href: "https://app.orderly.network/tradingRewards",
-            description: "Trade with Orderly to earn ORDER",
+            href: "#",
+            description: "Coming Soon...",
             icon: /* @__PURE__ */ jsx(OrderlyIcon, { size: 14 }),
             activeIcon: /* @__PURE__ */ jsx(OrderlyActiveIcon, { size: 14 }),
-            target: "_blank"
+            // target: "_blank",
+            disabled: true
           },
           {
             name: "Staking",
-            href: "https://app.orderly.network/staking",
-            description: "Stake ORDER/esORDER to acquire VALOR",
+            href: "#",
+            description: "Coming Soon...",
             icon: /* @__PURE__ */ jsx(OrderlyIcon, { size: 14 }),
             activeIcon: /* @__PURE__ */ jsx(OrderlyActiveIcon, { size: 14 }),
-            target: "_blank"
+            // target: "_blank",
+            disabled: true
           }
         ]
       }
     },
     footerProps: {
-      // telegramUrl: "https://orderly.network",
-      discordUrl: "https://discord.gg/MA98WqRjbd",
-      twitterUrl: "https://x.com/winmore_xyz",
-      trailing: /* @__PURE__ */ jsxs("span", { className: "oui-text-2xs oui-text-base-contrast-54", children: [
-        "Charts powered by",
-        " ",
-        /* @__PURE__ */ jsx(
-          "a",
-          {
-            href: "https://tradingview.com",
-            target: "_blank",
-            rel: "noopener noreferrer",
-            children: "TradingView"
-          }
-        )
-      ] })
+      // telegramUrl: "https://t.me",
+      discordUrl: "https://discord.gg/Bvar3BRhrY",
+      twitterUrl: "https://x.com/ninco_fi",
+      trailing: /* @__PURE__ */ jsx(
+        "span",
+        {
+          className: "oui-text-2xs oui-text-base-contrast-54",
+          style: { position: "absolute", right: 10 },
+          children: "Ninco Finance"
+        }
+      )
     }
   },
   orderlyAppProvider: {
     appIcons: {
       main: {
-        img: "/logo.svg"
+        img: "/logo.png"
       },
       secondary: {
         img: "/logo-secondary.svg"
@@ -35587,7 +35543,7 @@ const NimcoProvider = (props) => {
     (_chainId3, { isTestnet }) => {
       if (isTestnet && networkId === "mainnet" || !isTestnet && networkId === "testnet") {
         setTimeout(() => {
-          const href = isTestnet ? void 0 : void 0;
+          const href = isTestnet ? "https://broker-template-git-develop-orderly-devrels-projects.vercel.app" : "https://broker-template-seven.vercel.app";
           if (href) {
             window.location.href = href;
           }
@@ -35618,7 +35574,45 @@ const NimcoProvider = (props) => {
     }
   );
 };
+function generatePageTitle(title) {
+  return `${title} | ${"NincoFi"}`;
+}
+function formatSymbol(symbol, format2 = "base-type") {
+  const arr = symbol.split("_");
+  const type = arr[0];
+  const base = arr[1];
+  const quote = arr[2];
+  return format2.replace("type", type).replace("base", base).replace("quote", quote);
+}
+const applyCustomInitConfigs = () => {
+  setTimeout(() => {
+    const isInitialized = localStorage.getItem("init");
+    if (isInitialized === "1") {
+      return;
+    }
+    const adapterSettingsJSON = localStorage.getItem("SDK_Tradingview_adapter");
+    if (!adapterSettingsJSON) {
+      return;
+    }
+    const adapterSettings = JSON.parse(adapterSettingsJSON);
+    if (!adapterSettings) {
+      return;
+    }
+    if (!("ChartDrawingToolbarWidget.visible" in adapterSettings)) {
+      adapterSettings["ChartDrawingToolbarWidget.visible"] = "true";
+      localStorage.setItem(
+        "SDK_Tradingview_adapter",
+        JSON.stringify(adapterSettings)
+      );
+    }
+    localStorage.setItem("init", "1");
+    window.location.reload();
+  }, 5e3);
+};
 function Layout({ children }) {
+  useEffect(() => {
+    applyCustomInitConfigs();
+  }, []);
   return /* @__PURE__ */ jsxs("html", { lang: "en", children: [
     /* @__PURE__ */ jsxs("head", { children: [
       /* @__PURE__ */ jsx("meta", { charSet: "utf-8" }),
@@ -43418,16 +43412,6 @@ function getSymbol() {
 function updateSymbol(symbol) {
   localStorage.setItem(ORDERLY_SYMBOL_KEY, symbol || DEFAULT_SYMBOL);
 }
-function generatePageTitle(title) {
-  return `${title} | ${"NincoFi"}`;
-}
-function formatSymbol(symbol, format2 = "base-type") {
-  const arr = symbol.split("_");
-  const type = arr[0];
-  const base = arr[1];
-  const quote = arr[2];
-  return format2.replace("type", type).replace("base", base).replace("quote", quote);
-}
 const meta$8 = () => {
   return [{ title: generatePageTitle("Positions") }];
 };
@@ -43719,7 +43703,7 @@ const route12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   default: PerpPage
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Cn1fEKIM.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/index-Cm2FbuNF.js", "/assets/components-ClsRDx6D.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-CLlrzKlO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/index-Cm2FbuNF.js", "/assets/components-ClsRDx6D.js", "/assets/root-Bw1OWb8N.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/config-DaBgEe5Y.js"], "css": ["/assets/root-Cf6FZf1P.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-rZ5oE6cF.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-09RN6Rey.js", "/assets/index-CeSNA-qX.js", "/assets/index-D0Ps9ro4.js", "/assets/storage-CT6iC30N.js", "/assets/config-DaBgEe5Y.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-Cm2FbuNF.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-BASOWVDd.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-Bt7Yo644.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-DGqDvP_k.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-kSnb9NeE.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-BHhKl8c-.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-09RN6Rey.js", "/assets/index-CeSNA-qX.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-BlUS5Nqk.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BASOWVDd.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-09RN6Rey.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-mxr8gQX7.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-ZQgNWOoW.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-CHzDwWb_.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-D0Ps9ro4.js", "/assets/config-DaBgEe5Y.js", "/assets/storage-CT6iC30N.js", "/assets/utils-OKWQP5Dn.js", "/assets/index-Cm2FbuNF.js", "/assets/index-09RN6Rey.js", "/assets/index-DtYLQb4K.js", "/assets/index-B9ha-PaS.js", "/assets/index-CLPnXxgr.js", "/assets/Trans-mxr8gQX7.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-BASOWVDd.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-B6ctIFuv.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/config-DaBgEe5Y.js", "/assets/useNav-daByEihh.js", "/assets/index-Cm2FbuNF.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-BYa4R3ng.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CLPnXxgr.js", "/assets/config-DaBgEe5Y.js", "/assets/useNav-daByEihh.js", "/assets/index-Cm2FbuNF.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-D88vrNqL.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CLPnXxgr.js", "/assets/config-DaBgEe5Y.js", "/assets/useNav-daByEihh.js", "/assets/index-Cm2FbuNF.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-2a5cd0bf.js", "version": "2a5cd0bf" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Jc1UIblO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-veRyk_7b.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js", "/assets/root-CdHLFl1a.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/config-C3MsX7Kt.js", "/assets/utils-CryvheNm.js"], "css": ["/assets/root-B4DVXiWd.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-DTBFg2o5.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-09RN6Rey.js", "/assets/index-CeSNA-qX.js", "/assets/index-D0Ps9ro4.js", "/assets/storage-CT6iC30N.js", "/assets/config-C3MsX7Kt.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-BASOWVDd.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-CWbjXJE_.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-CryvheNm.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-CypFF63q.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-CryvheNm.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-CEgfsNR6.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-CryvheNm.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-CV_ohgZl.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-09RN6Rey.js", "/assets/index-CeSNA-qX.js", "/assets/utils-CryvheNm.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-B3vbI6V7.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BASOWVDd.js", "/assets/utils-CryvheNm.js", "/assets/index-09RN6Rey.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-mxr8gQX7.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-CKVnn1hV.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/utils-CryvheNm.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-6-mdm5b-.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-D0Ps9ro4.js", "/assets/config-C3MsX7Kt.js", "/assets/storage-CT6iC30N.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-09RN6Rey.js", "/assets/index-DtYLQb4K.js", "/assets/index-B9ha-PaS.js", "/assets/index-CLPnXxgr.js", "/assets/Trans-mxr8gQX7.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-BASOWVDd.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-D6jW_Mw-.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CeSNA-qX.js", "/assets/config-C3MsX7Kt.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-09RN6Rey.js", "/assets/index-CLPnXxgr.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/index-DtYLQb4K.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-D3A33TmC.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CLPnXxgr.js", "/assets/config-C3MsX7Kt.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-Bl-ew89S.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CLPnXxgr.js", "/assets/config-C3MsX7Kt.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-09RN6Rey.js", "/assets/index-B9ha-PaS.js", "/assets/Trans-mxr8gQX7.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-015ad6b1.js", "version": "015ad6b1" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";
