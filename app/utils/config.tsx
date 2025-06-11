@@ -1,8 +1,21 @@
 import { TradingPageProps } from "@orderly.network/trading";
-import { FooterProps, MainNavWidgetProps } from "@orderly.network/ui-scaffold";
+import {
+  BottomNavProps,
+  FooterProps,
+  MainNavWidgetProps,
+} from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
 import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/nimco";
 import SwapTradeSwitch from "@/components/common/swap-trade-switch";
+import {
+  LeaderboardActiveIcon,
+  LeaderboardInactiveIcon,
+  PortfolioActiveIcon,
+  PortfolioInactiveIcon,
+  TraderMobileIcon,
+  TradingActiveIcon,
+  TradingInactiveIcon,
+} from "@orderly.network/ui";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -11,6 +24,7 @@ export type OrderlyConfig = {
   scaffold: {
     mainNavProps: MainNavWidgetProps;
     footerProps: FooterProps;
+    bottomNavProps?: BottomNavProps;
   };
   tradingPage: {
     tradingViewConfig: TradingPageProps["tradingViewConfig"];
@@ -24,7 +38,11 @@ const config: OrderlyConfig = {
       leading: <SwapTradeSwitch />,
       initialMenu: "/",
       mainMenus: [
-        { name: "Trading", href: "/" },
+        {
+          name: "Trading",
+          href: "/",
+          // isSubMenuInMobile: true
+        },
         { name: "Portfolio", href: "/portfolio" },
         { name: "Markets", href: "/markets" },
       ],
@@ -67,6 +85,38 @@ const config: OrderlyConfig = {
           Ninco Finance
         </span>
       ),
+    },
+    bottomNavProps: {
+      mainMenus: [
+        {
+          name: "",
+          href: "/",
+          activeIcon: <TradingActiveIcon size={32} />,
+          inactiveIcon: (
+            <TradingInactiveIcon size={32} style={{ cursor: "pointer" }} />
+          ),
+        },
+        {
+          name: "",
+          href: "/portfolio",
+          activeIcon: <PortfolioActiveIcon size={32} />,
+          inactiveIcon: (
+            <PortfolioInactiveIcon size={32} style={{ cursor: "pointer" }} />
+          ),
+        },
+        {
+          name: "",
+          href: "/markets",
+          activeIcon: <TraderMobileIcon />,
+          inactiveIcon: (
+            <LeaderboardInactiveIcon
+              size={32}
+              style={{ cursor: "pointer", marginBottom: "-10px" }}
+            />
+          ),
+        },
+      ],
+      current: "/",
     },
   },
   orderlyAppProvider: {

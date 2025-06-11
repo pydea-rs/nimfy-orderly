@@ -7,5 +7,5 @@ export const meta: MetaFunction = () => {
 };
 
 export default function MarketsPage() {
-  return <MarketsHomePage />;
+  return <MarketsHomePage className="overflow-x-auto" />;
 }
