@@ -54,7 +54,6 @@ const NincoProvider: FC<{ children: ReactNode }> = (props) => {
                     dappUrl: window.location.origin,
                   }),
                 ],
-                chains: [{ id: 10 }],
               },
             }
           : undefined
