@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "@remix-run/react";
 import { PortfolioLayoutWidget } from "@orderly.network/portfolio";
 import config from "@/utils/config";
 import { useNav } from "@/hooks/useNav";
+import { getButtonNavMenu } from "@/utils/common";
 
 export default function PortfolioLayout() {
   const location = useLocation();
@@ -30,10 +31,7 @@ export default function PortfolioLayout() {
       leftSideProps={{
         current: currentPath,
       }}
-      bottomNavProps={{
-        ...config.scaffold.bottomNavProps,
-        current: "/portfolio",
-      }}
+      bottomNavProps={getButtonNavMenu("/portfolio")}
     >
       <Outlet />
     </PortfolioLayoutWidget>

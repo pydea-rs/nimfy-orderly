@@ -8,7 +8,7 @@ import injected from "@web3-onboard/injected-wallets";
 import walletConnect from "@web3-onboard/walletconnect";
 import binance from "@binance/w3w-blocknative-connector";
 
-const NimcoProvider: FC<{ children: ReactNode }> = (props) => {
+const NincoProvider: FC<{ children: ReactNode }> = (props) => {
   const networkId = import.meta.env.VITE_NETWORK_ID as NetworkId;
   const onChainChanged = useCallback(
     (_chainId: number, { isTestnet }: { isTestnet: boolean }) => {
@@ -54,6 +54,7 @@ const NimcoProvider: FC<{ children: ReactNode }> = (props) => {
                     dappUrl: window.location.origin,
                   }),
                 ],
+                chains: [{ id: 10 }],
               },
             }
           : undefined
@@ -72,4 +73,4 @@ const NimcoProvider: FC<{ children: ReactNode }> = (props) => {
   );
 };
 
-export default NimcoProvider;
+export default NincoProvider;

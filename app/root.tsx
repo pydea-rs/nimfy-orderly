@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import NimcoProvider from "@/components/nimcoProvider";
+import NincoProvider from "@/components/ninco-provider";
 import "./styles/index.css";
 import { useEffect } from "react";
 import { applyCustomInitConfigs } from "./utils/utils";
@@ -24,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <NimcoProvider>{children}</NimcoProvider>
+        <NincoProvider>{children}</NincoProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

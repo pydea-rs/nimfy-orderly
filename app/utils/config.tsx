@@ -5,16 +5,8 @@ import {
   MainNavWidgetProps,
 } from "@orderly.network/ui-scaffold";
 import { AppLogos } from "@orderly.network/react-app";
-import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/nimco";
 import SwapTradeSwitch from "@/components/common/swap-trade-switch";
-import {
-  LeaderboardInactiveIcon,
-  PortfolioActiveIcon,
-  PortfolioInactiveIcon,
-  TraderMobileIcon,
-  TradingActiveIcon,
-  TradingInactiveIcon,
-} from "@orderly.network/ui";
+import { getButtonNavMenu } from "./common";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -48,14 +40,14 @@ const config: OrderlyConfig = {
       campaigns: {
         name: "Reward",
         href: "/rewards",
-        icon: "/reward-logo.png",
+        icon: "/logo-secondary.svg",
         children: [
           {
             name: "Trading rewards",
             href: "#",
             description: "Coming Soon...",
-            icon: <OrderlyIcon size={14} />,
-            activeIcon: <OrderlyActiveIcon size={14} />,
+            icon: "/logo-secondary.svg",
+            activeIcon: "/logo.svg",
             // target: "_blank",
             disabled: true,
           },
@@ -64,8 +56,8 @@ const config: OrderlyConfig = {
             name: "Staking",
             href: "#",
             description: "Coming Soon...",
-            icon: <OrderlyIcon size={14} />,
-            activeIcon: <OrderlyActiveIcon size={14} />,
+            icon: "/logo-secondary.svg",
+            activeIcon: "/logo.svg",
             // target: "_blank",
             disabled: true,
           },
@@ -85,43 +77,12 @@ const config: OrderlyConfig = {
         </span>
       ),
     },
-    bottomNavProps: {
-      mainMenus: [
-        {
-          name: "",
-          href: "/",
-          activeIcon: <TradingActiveIcon size={32} />,
-          inactiveIcon: (
-            <TradingInactiveIcon size={32} style={{ cursor: "pointer" }} />
-          ),
-        },
-        {
-          name: "",
-          href: "/portfolio",
-          activeIcon: <PortfolioActiveIcon size={32} />,
-          inactiveIcon: (
-            <PortfolioInactiveIcon size={32} style={{ cursor: "pointer" }} />
-          ),
-        },
-        {
-          name: "",
-          href: "/markets",
-          activeIcon: <TraderMobileIcon />,
-          inactiveIcon: (
-            <LeaderboardInactiveIcon
-              size={32}
-              style={{ cursor: "pointer", marginBottom: "-10px" }}
-            />
-          ),
-        },
-      ],
-      current: "/",
-    },
+    bottomNavProps: getButtonNavMenu("/"),
   },
   orderlyAppProvider: {
     appIcons: {
       main: {
-        img: "/logo.png",
+        img: "/logo.svg",
       },
       secondary: {
         img: "/logo-secondary.svg",

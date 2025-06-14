@@ -104,6 +104,7 @@ import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { createInstance } from "i18next";
 import { I18nContext, useTranslation, Trans } from "react-i18next";
 import G$8 from "i18next-browser-languagedetector";
+import { createPortal } from "react-dom";
 import "@web3-onboard/walletconnect";
 import { UTCDateMini } from "@date-fns/utc";
 import _a from "jsqr";
@@ -35395,73 +35396,139 @@ function Lr$3(e2) {
     return t ? s2(n4, d2, t) : "";
   } };
 }
-const OrderlyIcon = (props) => {
-  const { size = 14, ...rest } = props;
-  return /* @__PURE__ */ jsx(
-    "svg",
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      xmlns: "http://www.w3.org/2000/svg",
-      ...rest,
-      children: /* @__PURE__ */ jsx("g", { transform: "translate(24, 0) scale(-1, 1)", children: /* @__PURE__ */ jsx(
-        "path",
-        {
-          fillRule: "evenodd",
-          clipRule: "evenodd",
-          d: "M6 3V21H9L15 9.5V21H18V3H15L9 14.5V3H6Z",
-          fill: "white",
-          fillOpacity: "0.98"
-        }
-      ) })
-    }
+const PortalTooltip = ({
+  children,
+  targetRef,
+  visible
+}) => {
+  const [pos, setPos] = useState({
+    left: 0,
+    top: 0
+  });
+  useEffect(() => {
+    if (!visible || !targetRef.current) return;
+    const rect = targetRef.current.getBoundingClientRect();
+    setPos({
+      left: rect.left + rect.width / 2,
+      top: rect.bottom + 8
+      // 8px below the button
+    });
+  }, [visible, targetRef]);
+  if (!visible) return null;
+  return createPortal(
+    /* @__PURE__ */ jsxs(
+      "div",
+      {
+        style: {
+          position: "fixed",
+          left: pos.left,
+          top: pos.top,
+          transform: "translateX(-50%) scale(1)",
+          backgroundColor: "#27272a",
+          // Tailwind gray-800 approx
+          color: "white",
+          padding: "6px 12px",
+          borderRadius: 8,
+          fontSize: 13,
+          fontWeight: 500,
+          whiteSpace: "nowrap",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+          zIndex: 9999,
+          pointerEvents: "none",
+          opacity: 1,
+          transition: "opacity 150ms ease, transform 150ms ease",
+          animation: "tooltip-pop 150ms ease forwards"
+        },
+        className: "tooltip",
+        children: [
+          children,
+          /* @__PURE__ */ jsx("style", { children: `
+          @keyframes tooltip-pop {
+            0% {
+              opacity: 0;
+              transform: translateX(-50%) scale(0.85);
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(-50%) scale(1);
+            }
+          }
+        ` })
+        ]
+      }
+    ),
+    document.body
   );
 };
-const OrderlyActiveIcon = (props) => {
-  const { size = 14, ...rest } = props;
-  return /* @__PURE__ */ jsx(
-    "svg",
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      xmlns: "http://www.w3.org/2000/svg",
-      ...rest,
-      children: /* @__PURE__ */ jsx("g", { transform: "translate(24, 0) scale(-1, 1)", children: /* @__PURE__ */ jsx(
-        "path",
-        {
-          fillRule: "evenodd",
-          clipRule: "evenodd",
-          d: "M6 3V21H9L15 9.5V21H18V3H15L9 14.5V3H6Z",
-          fill: "coral",
-          fillOpacity: "0.98"
-        }
-      ) })
-    }
-  );
+const SwapTradeSwitch = () => {
+  const [hovered, setHovered] = useState(false);
+  const swapRef = useRef(null);
+  return /* @__PURE__ */ jsxs("div", { className: "flex items-center bg-[#1A1A1A] p-1 rounded-md overflow-visible", children: [
+    /* @__PURE__ */ jsxs(
+      "div",
+      {
+        onMouseEnter: () => setHovered(true),
+        onMouseLeave: () => setHovered(false),
+        className: "relative",
+        children: [
+          /* @__PURE__ */ jsx(
+            Link,
+            {
+              ref: swapRef,
+              to: "#",
+              "aria-disabled": true,
+              className: "px-3 py-1 rounded-md text-sm text-gray-500 bg-transparent cursor-not-allowed",
+              children: "Swap"
+            }
+          ),
+          /* @__PURE__ */ jsx(PortalTooltip, { targetRef: swapRef, visible: hovered, children: "Coming Soon..." })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsx(
+      Link,
+      {
+        to: "/",
+        className: "px-3 py-1 rounded-md text-sm text-white bg-gradient-to-r from-purple-500 to-purple-600",
+        children: "Trade"
+      }
+    )
+  ] });
 };
-const SwapTradeSwitch = () => /* @__PURE__ */ jsxs("div", { className: "flex items-center bg-[#1A1A1A] p-1 rounded-md", children: [
-  /* @__PURE__ */ jsx(
-    Link,
-    {
-      to: "#",
-      "aria-disabled": true,
-      className: "px-4 py-1 rounded-md text-sm text-gray-500 bg-transparent cursor-not-allowed",
-      children: "Swap"
-    }
-  ),
-  /* @__PURE__ */ jsx(
-    Link,
-    {
-      to: "/",
-      className: "px-4 py-1 rounded-md text-sm text-white bg-gradient-to-r from-purple-500 to-purple-600",
-      children: "Trade"
-    }
-  )
-] });
+const menu = [
+  {
+    name: "Trading",
+    href: "/",
+    activeIcon: /* @__PURE__ */ jsx(Ip, { size: 32 }),
+    inactiveIcon: /* @__PURE__ */ jsx(Np, { size: 32, style: { cursor: "pointer" } })
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+    activeIcon: /* @__PURE__ */ jsx(Sp, { size: 32 }),
+    inactiveIcon: /* @__PURE__ */ jsx(kp, { size: 32, style: { cursor: "pointer" } })
+  },
+  {
+    name: "Markets",
+    href: "/markets",
+    activeIcon: /* @__PURE__ */ jsx(yp, {}),
+    inactiveIcon: /* @__PURE__ */ jsx(
+      Mp,
+      {
+        size: 32,
+        style: { cursor: "pointer", marginBottom: "-10px" }
+      }
+    )
+  }
+];
+const getButtonNavMenu = (current) => {
+  return {
+    mainMenus: menu.map(
+      (item) => item.href === current ? item : { ...item, name: "" }
+    ),
+    current
+  };
+};
 const config = {
   scaffold: {
     mainNavProps: {
@@ -35479,14 +35546,14 @@ const config = {
       campaigns: {
         name: "Reward",
         href: "/rewards",
-        icon: "/reward-logo.png",
+        icon: "/logo-secondary.svg",
         children: [
           {
             name: "Trading rewards",
             href: "#",
             description: "Coming Soon...",
-            icon: /* @__PURE__ */ jsx(OrderlyIcon, { size: 14 }),
-            activeIcon: /* @__PURE__ */ jsx(OrderlyActiveIcon, { size: 14 }),
+            icon: "/logo-secondary.svg",
+            activeIcon: "/logo.svg",
             // target: "_blank",
             disabled: true
           },
@@ -35494,8 +35561,8 @@ const config = {
             name: "Staking",
             href: "#",
             description: "Coming Soon...",
-            icon: /* @__PURE__ */ jsx(OrderlyIcon, { size: 14 }),
-            activeIcon: /* @__PURE__ */ jsx(OrderlyActiveIcon, { size: 14 }),
+            icon: "/logo-secondary.svg",
+            activeIcon: "/logo.svg",
             // target: "_blank",
             disabled: true
           }
@@ -35515,40 +35582,12 @@ const config = {
         }
       )
     },
-    bottomNavProps: {
-      mainMenus: [
-        {
-          name: "",
-          href: "/",
-          activeIcon: /* @__PURE__ */ jsx(Ip, { size: 32 }),
-          inactiveIcon: /* @__PURE__ */ jsx(Np, { size: 32, style: { cursor: "pointer" } })
-        },
-        {
-          name: "",
-          href: "/portfolio",
-          activeIcon: /* @__PURE__ */ jsx(Sp, { size: 32 }),
-          inactiveIcon: /* @__PURE__ */ jsx(kp, { size: 32, style: { cursor: "pointer" } })
-        },
-        {
-          name: "",
-          href: "/markets",
-          activeIcon: /* @__PURE__ */ jsx(yp, {}),
-          inactiveIcon: /* @__PURE__ */ jsx(
-            Mp,
-            {
-              size: 32,
-              style: { cursor: "pointer", marginBottom: "-10px" }
-            }
-          )
-        }
-      ],
-      current: "/"
-    }
+    bottomNavProps: getButtonNavMenu("/")
   },
   orderlyAppProvider: {
     appIcons: {
       main: {
-        img: "/logo.png"
+        img: "/logo.svg"
       },
       secondary: {
         img: "/logo-secondary.svg"
@@ -35575,13 +35614,13 @@ const config = {
     }
   }
 };
-const NimcoProvider = (props) => {
+const NincoProvider = (props) => {
   const networkId = "mainnet";
   const onChainChanged = useCallback(
     (_chainId3, { isTestnet }) => {
       if (isTestnet && networkId === "mainnet" || !isTestnet && networkId === "testnet") {
         setTimeout(() => {
-          const href = isTestnet ? "https://broker-template-git-develop-orderly-devrels-projects.vercel.app" : "https://broker-template-seven.vercel.app";
+          const href = isTestnet ? void 0 : void 0;
           if (href) {
             window.location.href = href;
           }
@@ -35660,7 +35699,7 @@ function Layout({ children }) {
       /* @__PURE__ */ jsx(Links, {})
     ] }),
     /* @__PURE__ */ jsxs("body", { children: [
-      /* @__PURE__ */ jsx(NimcoProvider, { children }),
+      /* @__PURE__ */ jsx(NincoProvider, { children }),
       /* @__PURE__ */ jsx(ScrollRestoration, {}),
       /* @__PURE__ */ jsx(Scripts, {})
     ] })
@@ -43676,10 +43715,7 @@ function PortfolioLayout() {
       leftSideProps: {
         current: currentPath
       },
-      bottomNavProps: {
-        ...config.scaffold.bottomNavProps,
-        current: "/portfolio"
-      },
+      bottomNavProps: getButtonNavMenu("/portfolio"),
       children: /* @__PURE__ */ jsx(Outlet, {})
     }
   );
@@ -43698,10 +43734,7 @@ function MarketsPage() {
         initialMenu: "/markets"
       },
       footerProps: config.scaffold.footerProps,
-      bottomNavProps: {
-        ...config.scaffold.bottomNavProps,
-        current: "/markets"
-      },
+      bottomNavProps: getButtonNavMenu("/markets"),
       routerAdapter: {
         onRouteChange
       },
@@ -43750,7 +43783,7 @@ const route12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   default: PerpPage
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Jc1UIblO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-CzQDrqJr.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js", "/assets/root-BQhSKGNt.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/config-waRDqy7G.js", "/assets/utils-CryvheNm.js"], "css": ["/assets/root-RPrduSxJ.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-C3jkQLY0.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/index-Ba_HO5IA.js", "/assets/storage-CT6iC30N.js", "/assets/config-waRDqy7G.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-B11MX-TB.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-BhP2hBXy.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-Bq60gsfe.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-xd8C8wNz.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-BNQhwxRu.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-B7YROe-e.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-uQ8RFcOU.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-B9kU_f3R.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-BGy0KxZ_.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-Ba_HO5IA.js", "/assets/config-waRDqy7G.js", "/assets/storage-CT6iC30N.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-w6nujGiB.js", "/assets/index-DpsezUsw.js", "/assets/index-DDwcgkyU.js", "/assets/Trans-uQ8RFcOU.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-DcWSB9Y7.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/config-waRDqy7G.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-D7QeaUYG.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-waRDqy7G.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-BnDTpAsw.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-waRDqy7G.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-c7b7ff26.js", "version": "c7b7ff26" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Jc1UIblO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-BMirC69x.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js", "/assets/root-D0B1jng2.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/config-Cm2XODMx.js", "/assets/utils-CryvheNm.js"], "css": ["/assets/root-CpxNpXyj.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-psT721Ab.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/index-Ba_HO5IA.js", "/assets/storage-CT6iC30N.js", "/assets/config-Cm2XODMx.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-B11MX-TB.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-BhP2hBXy.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-Bq60gsfe.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-xd8C8wNz.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-BNQhwxRu.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-B7YROe-e.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-uQ8RFcOU.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-B9kU_f3R.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-Ba2aEADJ.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-Ba_HO5IA.js", "/assets/config-Cm2XODMx.js", "/assets/storage-CT6iC30N.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-w6nujGiB.js", "/assets/index-DpsezUsw.js", "/assets/index-DDwcgkyU.js", "/assets/Trans-uQ8RFcOU.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-D3hL9GMi.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-BpFAn85G.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-CtadkG-P.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-d46bd9cb.js", "version": "d46bd9cb" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";

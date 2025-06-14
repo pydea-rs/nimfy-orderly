@@ -1,17 +1,8 @@
 @import "@orderly.network/ui/dist/styles.css";
 @import "../styles/theme.css";
 @import "../styles/fonts.css";
+@import "../styles/custom.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-nowrap.oui-gap-1:has(
-    span.oui-text-2xs.oui-text-base-contrast-54
-  ):has(svg) {
-  visibility: hidden !important;
-}
-
-* {
-  font-weight: 700 !important;
-}
