@@ -2,7 +2,15 @@ import { FC, ReactNode, useCallback } from "react";
 import { WalletConnectorProvider } from "@orderly.network/wallet-connector";
 import { OrderlyAppProvider } from "@orderly.network/react-app";
 import config from "@/utils/config";
-import { NetworkId } from "@orderly.network/types";
+import {
+  Arbitrum,
+  Avalanche,
+  Base,
+  Ethereum,
+  NativeCurrency,
+  NetworkId,
+  Optimism,
+} from "@orderly.network/types";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import injected from "@web3-onboard/injected-wallets";
 import walletConnect from "@web3-onboard/walletconnect";
@@ -65,6 +73,33 @@ const NincoProvider: FC<{ children: ReactNode }> = (props) => {
         networkId={networkId}
         onChainChanged={onChainChanged}
         appIcons={config.orderlyAppProvider.appIcons}
+        chainFilter={{
+          mainnet: [Ethereum, Base, Avalanche, Arbitrum, Optimism],
+          testnet: [
+            {
+              id: 10143,
+              chainNameShort: "MON",
+              chainLogo: "",
+              chainInfo: {
+                chainId: "10143",
+                chainName: "Monad Testnet",
+                nativeCurrency: {
+                  name: "MON",
+                  symbol: "MON",
+                  decimals: 18,
+                } as NativeCurrency,
+                rpcUrls: ["https://testnet-rpc.monad.xyz"],
+                blockExplorerUrls: ["https://testnet.monadexplorer.com/"],
+              },
+              minGasBalance: 0,
+              minCrossGasBalance: 0,
+              maxPrepayCrossGas: 0,
+              blockExplorerName: "Monad Testnet Explorer",
+              chainName: "Monad Testnet",
+              requestRpc: "https://testnet-rpc.monad.xyz",
+            },
+          ],
+        }}
       >
         {props.children}
       </OrderlyAppProvider>

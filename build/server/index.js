@@ -1006,6 +1006,550 @@ var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
   OrderStatus2["REJECTED"] = "REJECTED";
   return OrderStatus2;
 })(OrderStatus || {});
+var Ethereum = {
+  chainNameShort: "Ethereum",
+  id: 1,
+  chainLogo: "",
+  chainInfo: {
+    chainId: `0x${1 .toString(16)}`,
+    chainName: "Ethereum Mainnet",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 8
+    },
+    rpcUrls: ["https://mainnet.infura.io/v3/9155d40884554acdb17699a18a1fe348"],
+    blockExplorerUrls: ["https://etherscan.io/"]
+  },
+  minGasBalance: 2e-3,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.025,
+  blockExplorerName: "EthScan",
+  chainName: "Ethereum Mainnet",
+  requestRpc: "https://rpc.ankr.com/eth"
+};
+var Avalanche = {
+  id: 43114,
+  chainInfo: {
+    chainId: `0x${43114 .toString(16)}`,
+    // '0xa86a'
+    chainName: "Avalanche",
+    nativeCurrency: {
+      name: "avax",
+      symbol: "AVAX",
+      decimals: 18,
+      fix: 5
+    },
+    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+    blockExplorerUrls: ["https://snowtrace.io/"]
+  },
+  minGasBalance: 0.05,
+  minCrossGasBalance: 0.15,
+  maxPrepayCrossGas: 2,
+  blockExplorerName: "Snowtrace",
+  chainName: "Avalanche",
+  chainNameShort: "Avalanche",
+  chainLogo: "",
+  requestRpc: "https://rpc.ankr.com/avalanche"
+};
+var Fuji = {
+  id: 43113,
+  chainInfo: {
+    chainId: `0x${43113 .toString(16)}`,
+    // '0xa86a'
+    chainName: "Avalanche Fuji Testnet",
+    nativeCurrency: {
+      name: "avax",
+      symbol: "AVAX",
+      decimals: 18,
+      fix: 5
+    },
+    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+    blockExplorerUrls: ["https://snowtrace.io/"]
+  },
+  minGasBalance: 0.05,
+  minCrossGasBalance: 0.15,
+  maxPrepayCrossGas: 2,
+  blockExplorerName: "Snowtrace",
+  chainName: "Avalanche Fuji",
+  chainNameShort: "Avalanche Fuji",
+  chainLogo: "",
+  requestRpc: "https://rpc.ankr.com/avalanche"
+};
+var BNB = {
+  id: 56,
+  chainInfo: {
+    chainId: `0x${56 .toString(16)}`,
+    // 0x38
+    chainName: "BNB Chain",
+    nativeCurrency: {
+      name: "bnb",
+      symbol: "BNB",
+      decimals: 18,
+      fix: 6
+    },
+    rpcUrls: ["https://bsc-dataseed1.binance.org/"],
+    blockExplorerUrls: ["https://bscscan.com/"]
+  },
+  minGasBalance: 0.02,
+  minCrossGasBalance: 0.02,
+  maxPrepayCrossGas: 0.1,
+  blockExplorerName: "BscScan",
+  chainName: "Binance Smart Chain",
+  chainNameShort: "BNB Chain",
+  requestRpc: "https://rpc.ankr.com/bsc",
+  chainLogo: ""
+};
+var Fantom = {
+  id: 250,
+  chainInfo: {
+    chainId: `0x${250 .toString(16)}`,
+    // 0x38
+    chainName: "Fantom",
+    nativeCurrency: {
+      name: "ftm",
+      symbol: "FTM",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://rpcapi.fantom.network"],
+    blockExplorerUrls: ["https://ftmscan.com/"]
+  },
+  minGasBalance: 1,
+  minCrossGasBalance: 10,
+  maxPrepayCrossGas: 60,
+  blockExplorerName: "FTMScan",
+  chainName: "Fantom",
+  chainNameShort: "Fantom",
+  chainLogo: "",
+  requestRpc: "https://rpc.ankr.com/fantom"
+};
+var Polygon = {
+  id: 137,
+  chainInfo: {
+    chainId: `0x${137 .toString(16)}`,
+    chainName: "Polygon",
+    nativeCurrency: {
+      name: "matic",
+      symbol: "MATIC",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://rpc-mainnet.matic.network"],
+    blockExplorerUrls: ["https://polygonscan.com/"]
+  },
+  minGasBalance: 0.1,
+  minCrossGasBalance: 1,
+  maxPrepayCrossGas: 30,
+  blockExplorerName: "Polygonscan",
+  chainName: "Polygon",
+  chainNameShort: "Polygon",
+  requestRpc: "https://rpc.ankr.com/polygon",
+  chainLogo: ""
+};
+var Arbitrum = {
+  id: 42161,
+  chainInfo: {
+    chainId: `0x${42161 .toString(16)}`,
+    chainName: "Arbitrum",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://arb1.arbitrum.io/rpc"],
+    blockExplorerUrls: ["https://arbiscan.io/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Arbiscan",
+  chainName: "Arbitrum",
+  chainNameShort: "Arbitrum",
+  requestRpc: "https://arb1.arbitrum.io/rpc",
+  chainLogo: ""
+};
+var Optimism = {
+  id: 10,
+  chainInfo: {
+    chainId: `0x${10 .toString(16)}`,
+    chainName: "Optimism",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://mainnet.optimism.io"],
+    blockExplorerUrls: ["https://optimistic.etherscan.io/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Optimism",
+  chainName: "Optimism",
+  chainNameShort: "Optimism",
+  requestRpc: "https://rpc.ankr.com/optimism",
+  chainLogo: ""
+};
+var zkSyncEra = {
+  id: 324,
+  chainInfo: {
+    chainId: `0x${324 .toString(16)}`,
+    chainName: "zkSync Era",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://zksync2-mainnet.zksync.io"],
+    blockExplorerUrls: ["https://explorer.zksync.io/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "zkSync Era",
+  chainName: "zkSync Era",
+  chainNameShort: "zkSync Era",
+  requestRpc: "https://zksync2-mainnet.zksync.io/",
+  chainLogo: ""
+  // blockExplorerName: 'zkSync Era Goerli',
+  // chainName: 'zkSync Era Goerli',
+  // chainNameShort: 'zkSync Era Goerli',
+  // requestRpc: 'https://zksync2-testnet.zksync.dev/',
+  // chainLogo:  '',
+};
+var PolygonzkEVM = {
+  id: 1101,
+  chainInfo: {
+    chainId: `0x${1101 .toString(16)}`,
+    chainName: "Polygon zkEVM",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://zkevm-rpc.com"],
+    blockExplorerUrls: ["https://zkevm.polygonscan.com/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Polygon zkEVM",
+  chainName: "Polygon zkEVM",
+  chainNameShort: "Polygon zkEVM",
+  requestRpc: "https://zkevm-rpc.com",
+  chainLogo: ""
+};
+var Linea = {
+  id: 59144,
+  chainInfo: {
+    chainId: `0x${59144 .toString(16)}`,
+    chainName: "Linea",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://rpc.linea.build"],
+    blockExplorerUrls: ["https://lineascan.build/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Linea",
+  chainName: "Linea",
+  chainNameShort: "Linea",
+  requestRpc: "https://rpc.linea.build",
+  chainLogo: ""
+};
+var Base = {
+  id: 8453,
+  chainInfo: {
+    chainId: `0x${8453 .toString(16)}`,
+    chainName: "Base Network",
+    nativeCurrency: {
+      name: "eth",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://developer-access-mainnet.base.org/"],
+    blockExplorerUrls: ["https://basescan.org"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Base",
+  chainName: "Base",
+  chainNameShort: "Base",
+  requestRpc: "https://developer-access-mainnet.base.org/",
+  chainLogo: ""
+};
+var Mantle = {
+  id: 5e3,
+  chainInfo: {
+    chainId: `0x${5e3.toString(16)}`,
+    chainName: "Mantle",
+    nativeCurrency: {
+      name: "MNT",
+      symbol: "MNT",
+      decimals: 6,
+      fix: 4
+    },
+    rpcUrls: ["https://rpc.mantle.xyz/"],
+    blockExplorerUrls: ["https://mantlescan.xyz/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Mantle",
+  chainName: "Mantle",
+  chainNameShort: "Mantle",
+  requestRpc: "https://rpc.mantle.xyz/",
+  chainLogo: ""
+};
+var ArbitrumGoerli = {
+  id: 421613,
+  chainInfo: {
+    chainId: `0x${421613 .toString(16)}`,
+    chainName: "Arbitrum Goerli",
+    nativeCurrency: {
+      name: "AGOR",
+      symbol: "AGOR",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://goerli-rollup.arbitrum.io/rpc"],
+    blockExplorerUrls: ["https://goerli-rollup-explorer.arbitrum.io/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Arbitrum Goerli",
+  chainName: "Arbitrum Goerli",
+  chainNameShort: "Arbitrum Goerli",
+  requestRpc: "https://goerli-rollup.arbitrum.io/rpc",
+  chainLogo: ""
+};
+var ArbitrumSepolia = {
+  id: 421614,
+  chainInfo: {
+    chainId: `0x${421614 .toString(16)}`,
+    chainName: "Arbitrum Sepolia",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://arbitrum-sepolia.blockpi.network/v1/rpc/public"],
+    blockExplorerUrls: ["https://sepolia-explorer.arbitrum.io"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Arbitrum Sepolia",
+  chainName: "Arbitrum Sepolia",
+  chainNameShort: "Arbitrum Sepolia",
+  requestRpc: "https://arbitrum-sepolia.blockpi.network/v1/rpc/public",
+  chainLogo: ""
+};
+var OptimismGoerli = {
+  id: 420,
+  chainInfo: {
+    chainId: `0x${420 .toString(16)}`,
+    chainName: "Optimism Goerli",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://optimism-goerli.gateway.tenderly.co"],
+    blockExplorerUrls: ["https://goerli-optimism.etherscan.io"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Optimism Goerli",
+  chainName: "Optimism Goerli",
+  chainNameShort: "Optimism Goerli",
+  requestRpc: "https://optimism-goerli.gateway.tenderly.co",
+  chainLogo: ""
+};
+var OptimismSepolia = {
+  id: 11155420,
+  chainInfo: {
+    chainId: `0x${11155420 .toString(16)}`,
+    chainName: "Optimism Sepolia",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://sepolia.optimism.io"],
+    blockExplorerUrls: ["https://sepolia-optimistic.etherscan.io"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Optimism Sepolia",
+  chainName: "Optimism Sepolia",
+  chainNameShort: "Optimism Sepolia",
+  requestRpc: "https://sepolia.optimism.io",
+  chainLogo: ""
+};
+var BaseSepolia = {
+  id: 84532,
+  chainInfo: {
+    chainId: `0x${84532 .toString(16)}`,
+    chainName: "Base Sepolia",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://base-sepolia-rpc.publicnode.com"],
+    blockExplorerUrls: ["https://base-sepolia.blockscout.com/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Base Sepolia",
+  chainName: "Base Sepolia",
+  chainNameShort: "Base Sepolia",
+  requestRpc: "https://base-sepolia-rpc.publicnode.com",
+  chainLogo: ""
+};
+var MantleSepolia = {
+  id: 5003,
+  chainInfo: {
+    chainId: `0x${5003 .toString(16)}`,
+    chainName: "Mantle Sepolia",
+    nativeCurrency: {
+      name: "MNT",
+      symbol: "MNT",
+      decimals: 6,
+      fix: 4
+    },
+    rpcUrls: ["https://rpc.sepolia.mantle.xyz/"],
+    blockExplorerUrls: ["https://sepolia.mantlescan.xyz/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Mantle Sepolia",
+  chainName: "Mantle Sepolia",
+  chainNameShort: "Mantle Sepolia",
+  requestRpc: "https://rpc.sepolia.mantle.xyz/",
+  chainLogo: ""
+};
+var PolygonAmoy = {
+  id: 80002,
+  chainInfo: {
+    chainId: `0x${80002 .toString(16)}`,
+    chainName: "Polygon Amoy",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 6,
+      fix: 4
+    },
+    rpcUrls: ["https://rpc-amoy.polygon.technology/"],
+    blockExplorerUrls: ["https://www.oklink.com/amoy"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "Polygon Amoy",
+  chainName: "Polygon Amoy",
+  chainNameShort: "Polygon Amoy",
+  requestRpc: "https://rpc-amoy.polygon.technology/",
+  chainLogo: ""
+};
+var Sei = {
+  id: 1329,
+  chainInfo: {
+    chainId: `0x${1329 .toString(16)}`,
+    chainName: "Sei Network",
+    nativeCurrency: {
+      name: "SEI",
+      symbol: "SEI",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: ["https://evm-rpc.sei-apis.com"],
+    blockExplorerUrls: ["https://seitrace.com/"]
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "SEI",
+  chainName: "Sei Network",
+  chainNameShort: "SEI",
+  requestRpc: "https://evm-rpc.sei-apis.com",
+  chainLogo: ""
+};
+var StoryTestnet = {
+  name: "Story Odyssey Testnet",
+  public_rpc_url: "https://rpc.odyssey.storyrpc.io/",
+  chain_id: 1516
+};
+var StoryOdysseyTestnet = {
+  id: 1329,
+  chainInfo: {
+    chainId: `0x${StoryTestnet.chain_id.toString(16)}`,
+    chainName: StoryTestnet.name,
+    nativeCurrency: {
+      name: "IP",
+      symbol: "IP",
+      decimals: 18,
+      fix: 4
+    },
+    rpcUrls: [StoryTestnet.public_rpc_url],
+    blockExplorerUrls: []
+  },
+  minGasBalance: 2e-4,
+  minCrossGasBalance: 2e-3,
+  maxPrepayCrossGas: 0.03,
+  blockExplorerName: "SEI",
+  chainName: "Sei Network",
+  chainNameShort: "SEI",
+  requestRpc: "https://evm-rpc.sei-apis.com",
+  chainLogo: ""
+};
+/* @__PURE__ */ new Map([
+  [Ethereum.id, Ethereum],
+  [Avalanche.id, Avalanche],
+  [Fuji.id, Fuji],
+  [BNB.id, BNB],
+  [Fantom.id, Fantom],
+  [Polygon.id, Polygon],
+  [Arbitrum.id, Arbitrum],
+  [Optimism.id, Optimism],
+  [zkSyncEra.id, zkSyncEra],
+  [PolygonzkEVM.id, PolygonzkEVM],
+  [Linea.id, Linea],
+  [Base.id, Base],
+  [Mantle.id, Mantle],
+  [ArbitrumGoerli.id, ArbitrumGoerli],
+  [ArbitrumSepolia.id, ArbitrumSepolia],
+  [OptimismGoerli.id, OptimismGoerli],
+  [OptimismSepolia.id, OptimismSepolia],
+  [BaseSepolia.id, BaseSepolia],
+  [MantleSepolia.id, MantleSepolia],
+  [PolygonAmoy.id, PolygonAmoy],
+  [Sei.id, Sei],
+  [StoryOdysseyTestnet.id, StoryOdysseyTestnet]
+]);
 var ChainNamespace = /* @__PURE__ */ ((ChainNamespace2) => {
   ChainNamespace2["evm"] = "EVM";
   ChainNamespace2["solana"] = "SOL";
@@ -35645,6 +36189,33 @@ const NincoProvider = (props) => {
           networkId,
           onChainChanged,
           appIcons: config.orderlyAppProvider.appIcons,
+          chainFilter: {
+            mainnet: [Ethereum, Base, Avalanche, Arbitrum, Optimism],
+            testnet: [
+              {
+                id: 10143,
+                chainNameShort: "MON",
+                chainLogo: "",
+                chainInfo: {
+                  chainId: "10143",
+                  chainName: "Monad Testnet",
+                  nativeCurrency: {
+                    name: "MON",
+                    symbol: "MON",
+                    decimals: 18
+                  },
+                  rpcUrls: ["https://testnet-rpc.monad.xyz"],
+                  blockExplorerUrls: ["https://testnet.monadexplorer.com/"]
+                },
+                minGasBalance: 0,
+                minCrossGasBalance: 0,
+                maxPrepayCrossGas: 0,
+                blockExplorerName: "Monad Testnet Explorer",
+                chainName: "Monad Testnet",
+                requestRpc: "https://testnet-rpc.monad.xyz"
+              }
+            ]
+          },
           children: props.children
         }
       )
@@ -43783,7 +44354,7 @@ const route12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   default: PerpPage
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Jc1UIblO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-C-WJS7Yj.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js", "/assets/root-VU9BOTDf.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/config-Cm2XODMx.js", "/assets/utils-CryvheNm.js"], "css": ["/assets/root-DlvpCPDF.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-psT721Ab.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/index-Ba_HO5IA.js", "/assets/storage-CT6iC30N.js", "/assets/config-Cm2XODMx.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-B11MX-TB.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-BhP2hBXy.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-Bq60gsfe.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-xd8C8wNz.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCYrsEij.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-BNQhwxRu.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-B7YROe-e.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-uQ8RFcOU.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-B9kU_f3R.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/utils-CryvheNm.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-Ba2aEADJ.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-Ba_HO5IA.js", "/assets/config-Cm2XODMx.js", "/assets/storage-CT6iC30N.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-w6nujGiB.js", "/assets/index-DpsezUsw.js", "/assets/index-DDwcgkyU.js", "/assets/Trans-uQ8RFcOU.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-B7YROe-e.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-D3hL9GMi.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-C_p0Ylx7.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DDwcgkyU.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/index-w6nujGiB.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-BpFAn85G.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-CtadkG-P.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-DDwcgkyU.js", "/assets/config-Cm2XODMx.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-CCYrsEij.js", "/assets/index-DpsezUsw.js", "/assets/Trans-uQ8RFcOU.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-bee1079a.js", "version": "bee1079a" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Jc1UIblO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-BS0xJyAH.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/client-Df-1iYcO.js", "/assets/components-GEXnQvz7.js", "/assets/root-BaMSVYtS.js", "/assets/index-YvCd-0hD.js", "/assets/index-DQTnwTjw.js", "/assets/config-CnQDHSlA.js", "/assets/utils-CryvheNm.js"], "css": ["/assets/root-DlvpCPDF.css"] }, "routes/portfolio.positions": { "id": "routes/portfolio.positions", "parentId": "routes/portfolio", "path": "positions", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.positions-Db1eiYUZ.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-YvCd-0hD.js", "/assets/index-BJvK-juo.js", "/assets/index-D_VU9V8T.js", "/assets/storage-CT6iC30N.js", "/assets/config-CnQDHSlA.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-CCMo2iC7.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio.api-key": { "id": "routes/portfolio.api-key", "parentId": "routes/portfolio", "path": "api-key", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.api-key-BRzi7f0b.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BJvK-juo.js", "/assets/utils-CryvheNm.js", "/assets/index-YvCd-0hD.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.setting": { "id": "routes/portfolio.setting", "parentId": "routes/portfolio", "path": "setting", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.setting-Cv_ZbrtO.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BJvK-juo.js", "/assets/utils-CryvheNm.js", "/assets/index-YvCd-0hD.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio._index": { "id": "routes/portfolio._index", "parentId": "routes/portfolio", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio._index-C9hiuiXM.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BJvK-juo.js", "/assets/utils-CryvheNm.js", "/assets/index-YvCd-0hD.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/portfolio.orders": { "id": "routes/portfolio.orders", "parentId": "routes/portfolio", "path": "orders", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.orders-S-Z3nN70.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-YvCd-0hD.js", "/assets/index-BJvK-juo.js", "/assets/utils-CryvheNm.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/markets._index": { "id": "routes/markets._index", "parentId": "routes/markets", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets._index-Dk6KVmAv.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-CCMo2iC7.js", "/assets/utils-CryvheNm.js", "/assets/index-YvCd-0hD.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/Trans-_o4BKMx3.js"], "css": [] }, "routes/portfolio.fee": { "id": "routes/portfolio.fee", "parentId": "routes/portfolio", "path": "fee", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio.fee-udQqcEV1.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BJvK-juo.js", "/assets/utils-CryvheNm.js", "/assets/index-YvCd-0hD.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js"], "css": [] }, "routes/perp.$symbol": { "id": "routes/perp.$symbol", "parentId": "routes/perp", "path": ":symbol", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp._symbol-BwAeMatv.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-D_VU9V8T.js", "/assets/config-CnQDHSlA.js", "/assets/storage-CT6iC30N.js", "/assets/utils-CryvheNm.js", "/assets/components-GEXnQvz7.js", "/assets/index-YvCd-0hD.js", "/assets/index-Dzn3I8e3.js", "/assets/index-DQTnwTjw.js", "/assets/index-BKJ6DOoF.js", "/assets/Trans-_o4BKMx3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/index-CCMo2iC7.js"], "css": ["/assets/index-CTpUD00e.css"] }, "routes/portfolio": { "id": "routes/portfolio", "parentId": "root", "path": "portfolio", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/portfolio-DonAEqII.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BJvK-juo.js", "/assets/config-CnQDHSlA.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-YvCd-0hD.js", "/assets/index-BKJ6DOoF.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/index-Dzn3I8e3.js", "/assets/embla-carousel-react.esm-DDFcFn3T.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/markets": { "id": "routes/markets", "parentId": "root", "path": "markets", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/markets-CyCXMqhP.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BKJ6DOoF.js", "/assets/config-CnQDHSlA.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-YvCd-0hD.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/storage-CT6iC30N.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-DcRuBjQm.js", "imports": [], "css": [] }, "routes/perp": { "id": "routes/perp", "parentId": "root", "path": "perp", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/perp-DlZAPnkh.js", "imports": ["/assets/index-_b-vxSi4.js", "/assets/index-BKJ6DOoF.js", "/assets/config-CnQDHSlA.js", "/assets/useNav-bs4hxWmT.js", "/assets/components-GEXnQvz7.js", "/assets/index-YvCd-0hD.js", "/assets/index-DQTnwTjw.js", "/assets/Trans-_o4BKMx3.js", "/assets/storage-CT6iC30N.js"], "css": [] } }, "url": "/assets/manifest-85b2bbb8.js", "version": "85b2bbb8" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";
