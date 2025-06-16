@@ -1,1 +1,0 @@
-import{j as t}from"./index-_b-vxSi4.js";import{q as r}from"./index-SBrEk2Oj.js";import{g as e}from"./utils-CryvheNm.js";import"./index-Bhg9DOVY.js";import"./embla-carousel-react.esm-DDFcFn3T.js";import"./Trans-C0NJhNgC.js";const n=()=>[{title:e("Markets")}];function f(){return t.jsx(r,{className:"overflow-x-auto"})}export{f as default,n as meta};

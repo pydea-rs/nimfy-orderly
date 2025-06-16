@@ -1,10 +1,10 @@
 div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-nowrap.oui-gap-1:has(
     span.oui-text-2xs.oui-text-base-contrast-54
   ):has(svg) {
-  visibility: hidden !important;
+  display: none !important;
 }
 
 div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-nowrap.oui-gap-x-1
   svg {
-  display: none;
+  display: none !important;
 }
