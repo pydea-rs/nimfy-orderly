@@ -3,3 +3,8 @@ div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-no
   ):has(svg) {
   visibility: hidden !important;
 }
+
+div.oui-box.oui-flex.oui-flex-row.oui-items-center.oui-justify-start.oui-flex-nowrap.oui-gap-x-1
+  svg {
+  display: none;
+}
