@@ -1,42 +1,25 @@
-import { FC, ReactNode, useCallback } from "react";
+import { FC, ReactNode } from "react";
 import { WalletConnectorProvider } from "@orderly.network/wallet-connector";
 import { OrderlyAppProvider } from "@orderly.network/react-app";
 import config from "@/utils/config";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import injected from "@web3-onboard/injected-wallets";
+import walletConnect from "@web3-onboard/walletconnect";
+import binance from "@binance/w3w-blocknative-connector";
 import {
   Arbitrum,
   Avalanche,
   Base,
   Ethereum,
-  NetworkId,
   Optimism,
 } from "@orderly.network/types";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import injected from "@web3-onboard/injected-wallets";
-import walletConnect from "@web3-onboard/walletconnect";
-import binance from "@binance/w3w-blocknative-connector";
+import { useLocalStorage } from "@orderly.network/hooks";
 
 const NincoProvider: FC<{ children: ReactNode }> = (props) => {
-  const networkId = import.meta.env.VITE_NETWORK_ID as NetworkId;
-  const onChainChanged = useCallback(
-    (_chainId: number, { isTestnet }: { isTestnet: boolean }) => {
-      if (
-        (isTestnet && networkId === "mainnet") ||
-        (!isTestnet && networkId === "testnet")
-      ) {
-        setTimeout(() => {
-          const href = isTestnet
-            ? import.meta.env.VITE_TESTNET_URL
-            : import.meta.env.VITE_MAINNET_URL;
-          if (href) {
-            window.location.href = href;
-          }
-        }, 100);
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+  const [networkId, setNetworkId] = useLocalStorage(
+    "dmm-local-storage-network-id",
+    "mainnet"
   );
-
   return (
     <WalletConnectorProvider
       solanaInitial={{
@@ -70,10 +53,23 @@ const NincoProvider: FC<{ children: ReactNode }> = (props) => {
         brokerId={import.meta.env.VITE_ORDERLY_BROKER_ID}
         brokerName={import.meta.env.VITE_ORDERLY_BROKER_NAME}
         networkId={networkId}
-        onChainChanged={onChainChanged}
+        onChainChanged={(
+          chainId: number,
+          state: {
+            isTestnet: boolean;
+            isWalletConnected: boolean;
+          }
+        ) => {
+          const nextState = state.isTestnet ? "testnet" : "mainnet";
+          setNetworkId(nextState);
+          if (networkId !== nextState) {
+            window.location.reload();
+          }
+        }}
         appIcons={config.orderlyAppProvider.appIcons}
         chainFilter={{
           mainnet: [Ethereum, Base, Avalanche, Arbitrum, Optimism],
+
           testnet: [
             {
               id: 10143,
