@@ -1,105 +1,82 @@
-# Orderly Broker UI Template
+Thanks for sharing the commit history! Based on your commits and typical features of a React SDK forked from the Orderly React SDK, here is a professional README draft tailored to your `nimfy-orderly` repo:
 
-This template provides a quick way to set up a customized trading UI for Orderly Network brokers, built with Remix and deployable on Vercel.
+---
 
-🔗 [Live Demo](https://broker-template-seven.vercel.app/)
+# nimfy-orderly
 
-## Quick Start
+**nimfy-orderly** is a customized React SDK forked and adapted from the [Orderly React SDK](https://github.com/orderly-dev/orderly-web-sdk). It provides an intuitive and streamlined interface to interact with decentralized trading protocols, with customizations tailored for a specific company use case.
 
-1. **Fork the Repository**
+---
 
-   Fork this repository to your GitHub account to create your broker's UI.
+## Features & Customizations
 
-2. **Clone Your Fork**
+- **Network and Testnet fixes:** Fixes for testnet "wrong network" issues improving multi-chain support.
+- **UI/UX Improvements:**
 
-```sh
-git clone https://github.com/YOUR_USERNAME/broker-template.git
-cd broker-template
+  - Clickable app logo for better navigation
+  - Darker "Connect Wallet" button for clearer call-to-action
+  - Updated color scheme and logos aligned with company branding
+  - Mobile bottom navigation bar for improved usability on small screens
+  - Reorganized sidebar icons and market labels for better clarity
+
+- **Removed unnecessary features:**
+
+  - API key sections and pages removed to simplify the interface
+  - Orderly branding elements removed or replaced with custom placeholders (e.g., "Coming soon" in rewards section)
+
+- **Build & Deployment:**
+
+  - Updated build process and fixed favicon issues
+  - Configured allowed hosts for deployment
+  - Support for PM2 process management with ecosystem configuration fixes
+
+- **Chain filtering:** Enhanced chain filtering logic for improved user experience when selecting trading chains.
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/pydea-rs/nimfy-orderly.git
+cd nimfy-orderly
+npm install
 ```
 
-3. **Install Dependencies**
+---
 
-```sh
-yarn install
+## Usage
+
+Start the development server:
+
+```bash
+npm start
 ```
 
-## Configuration Steps
+Build for production:
 
-### 1. Broker Configuration
-
-Edit the `.env` file to set up your broker details:
-
-```env
-# Broker settings
-VITE_ORDERLY_BROKER_ID=your_broker_id
-VITE_ORDERLY_BROKER_NAME=Your Broker Name
-VITE_ORDERLY_NETWORK_ID=mainnet  # or testnet for testing
-
-# Meta tags
-VITE_APP_NAME=Your App Name
-VITE_APP_DESCRIPTION=Your app description for SEO
+```bash
+npm run build
 ```
 
-### 2. Theme Customization
+---
 
-1. Visit the [Orderly Storybook Trading Page](https://storybook.orderly.network/?path=/story/package-trading-tradingpage--page)
-2. Customize your preferred theme using the controls
-3. Export the generated CSS
-4. Replace the contents of `app/styles/theme.css` with your exported CSS
+## Configuration
 
-### 3. UI Configuration
+- Adjust `.env` variables or config files as needed to set up RPC endpoints, network parameters, and other environment-specific settings.
+- Ensure allowed hosts are set properly for your deployment environment.
 
-Edit `app/utils/config.tsx` to customize your UI:
+---
 
-- **Footer Links**: Update `footerProps` with your social media links
-- **Logos**: Replace the main and secondary logos in the `appIcons` section
-- **PnL Sharing**: Customize the PnL poster backgrounds and colors in `sharePnLConfig`
+## Contributing
 
-Required assets:
+Contributions are welcome! Please open issues or pull requests for bug fixes and new features.
 
-- Place your logos in the `public` directory:
-  - Main logo: `public/orderly-logo.svg`
-  - Secondary logo: `public/orderly-logo-secondary.svg`
-  - Favicon: `public/favicon.png`
-- PnL sharing backgrounds: `public/pnl/poster_bg_[1-4].png`
+---
 
-## Development
+## License
 
-Run the development server:
+This project inherits licensing terms from the original Orderly React SDK. Please refer to the original repository for full license details.
 
-```sh
-yarn dev
-```
+---
 
-## Deployment
-
-1. Build the application:
-
-```sh
-yarn build
-```
-
-2. Deploy to Vercel:
-   - Create an account on [Vercel](https://vercel.com) if you haven't already
-   - Install Vercel CLI: `yarn global add vercel`
-   - Run `vercel` in your project directory and follow the prompts
-   - For subsequent deployments, use `vercel --prod` to deploy to production
-
-For custom domain setup:
-
-- Go to your project settings in Vercel dashboard
-- Navigate to the "Domains" section
-- Add and configure your custom domain
-
-## Additional Resources
-
-- [Orderly JS SDK Documentation](https://github.com/OrderlyNetwork/js-sdk)
-- [Orderly Network Documentation](https://orderly.network/docs/sdks)
-- [Storybook Theme Editor](https://storybook.orderly.network/?path=/story/package-trading-tradingpage--page)
-
-## Live
-
-```
-pm2 start "npx remix-serve ./build/server/index.js"
-
-```
+If you'd like, I can also help you generate usage examples, API references, or contribution guidelines. Just let me know!
