@@ -14,6 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     applyCustomInitConfigs();
   }, []);
+
   return (
     <html lang="en">
       <head>
@@ -33,5 +34,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useEffect(() => {
+    document
+      .querySelectorAll(
+        "div.oui-box.oui-flex.oui-flex-col.oui-items-start.oui-justify-start.oui-flex-nowrap"
+      )
+      .forEach((div) => {
+        if (
+          div instanceof HTMLDivElement &&
+          div.querySelector("span")?.textContent?.toLowerCase()?.trim() ===
+            "24h volume"
+        ) {
+          div.style.display = "none";
+        }
+      });
+  }, []);
   return <Outlet />;
 }
