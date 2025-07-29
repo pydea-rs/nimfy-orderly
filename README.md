@@ -1,12 +1,6 @@
-Thanks for sharing the commit history! Based on your commits and typical features of a React SDK forked from the Orderly React SDK, here is a professional README draft tailored to your `nimfy-orderly` repo:
-
----
-
 # nimfy-orderly
 
 **nimfy-orderly** is a customized React SDK forked and adapted from the [Orderly React SDK](https://github.com/orderly-dev/orderly-web-sdk). It provides an intuitive and streamlined interface to interact with decentralized trading protocols, with customizations tailored for a specific company use case.
-
----
 
 ## Features & Customizations
 
@@ -32,7 +26,11 @@ Thanks for sharing the commit history! Based on your commits and typical feature
 
 - **Chain filtering:** Enhanced chain filtering logic for improved user experience when selecting trading chains.
 
----
+## ِDirect Run:
+
+- Use ecosystem.config.js
+- Or directly run through pm2:
+  > pm2 start remix-serve --name YourAppName --env NODE_ENV=production --env PORT=3000 -- ./build/server/index.js
 
 ## Installation
 
@@ -41,8 +39,6 @@ git clone https://github.com/pydea-rs/nimfy-orderly.git
 cd nimfy-orderly
 npm install
 ```
-
----
 
 ## Usage
 
@@ -58,25 +54,15 @@ Build for production:
 npm run build
 ```
 
----
-
 ## Configuration
 
 - Adjust `.env` variables or config files as needed to set up RPC endpoints, network parameters, and other environment-specific settings.
 - Ensure allowed hosts are set properly for your deployment environment.
 
----
-
 ## Contributing
 
 Contributions are welcome! Please open issues or pull requests for bug fixes and new features.
 
----
-
 ## License
 
 This project inherits licensing terms from the original Orderly React SDK. Please refer to the original repository for full license details.
-
----
-
-If you'd like, I can also help you generate usage examples, API references, or contribution guidelines. Just let me know!
